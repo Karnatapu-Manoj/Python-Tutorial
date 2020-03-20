@@ -1,0 +1,4 @@
+						Python Task 
+==========================================================
+
+Design a Marks_Sheet Registration Form which is going to be accessed & updated by The Teacher. It Should has to take the inputs from the user itself & present u the Students name, Father's Name, Students D-O-B,Class & Section of the student, All 6 Subjects marks, Total Marks, Average Score of the student, Percentage and Grade according to the obtained Percentage.
