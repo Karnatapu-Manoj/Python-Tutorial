@@ -1,0 +1,211 @@
+				Free Python Classes
+				       Day-1
+
+what is PYTHON:
+---------------
+	Python is a Multiparadigm Programmming Language invented by GUIDO VAN ROSSUM in 1991, which is derived from Monty Python's Flying Circus.
+
+	Python is easy to learn, powerful programming language, the application development process is much faster & easier. 
+	(Simple, Faster & Easier)
+
+	it is a General Purpose (/) Dynamic (/) High Level (/) Interpreted (/) Multi-Paradigm
+
+	PYTHON Moto is: Write less, Create more, Run Everywhere...!
+
+Features of PYTHON:
+====================
+
+ Easy to learn & use
+ Expressive Language
+ Cross-Platform Language
+ Free & Open Source(FLOSS)
+ Object-Oriented Language
+ Large Standard Library Support
+ Extensible
+ GUI Programming Support
+ Integrated
+
+Limitations of PYTHON:
+======================
+
+
+1. Application Portability
+2. Weak in Mobile Computing
+
+
+Technologies & it's Purpose:
+============================
+
+	In Software Industry every Technology has its own Purpose
+
+C-Language: Embedded Systems & IOS App development.
+
+C++ : Graphics & Gamming Implementation.
+
+JAVE Language : Web & Gamming Development
+
+.Net : Console & windows Programming
+
+PYTHON : Complex data processing & general purpose language.
+		(Suitable to develop any kind of Software & Products)
+
+PHP : Web programming
+
+Java Script : Client side Validation....!
+
+Why PYTHON is General Purpose Language:
+=======================================
+
+	Python is used to develop the following software Applications.
+
+	1.WebApps==> Django, Pyramid, Flask, CherryPy...!
+	2.Desktop GUI Apps===> TKinter, WxWidgets, Kivy, PyQt.
+	3.Software Development===> Build Control & Testing
+	4.Scientific & Numeric===> SciPy, Pandas, Numpy..!
+	5.Business Apps===> Tryton, Oodo
+	6.Console Based Apps===> IPython
+	7.Audio/Video Apps===>TimPlayer,Cplay
+	8.3D CAD Apps===> Fandango
+	9.Enterprise Apps===> OpenErp, Tryton, Picalo
+	10. Apps For Images===>VPython, Gogh, ImgSeek.
+
+
+
+Installing Steps for Python in Windows :
+==========================================
+
+1. Download the Latest version of Python from https://www.python.org/downloads/windows/
+
+2. Make Sure You have Enabled the checkmark for " [] Add python 3.8 to path ".
+
+3. Select Customize Installation option. (Only Experts).
+
+4. Make sure you have selected all Optional Features Like --> (Documentation, pip, tcl/tk & IDLE , Python test suit , Py launcher & for all users )
+
+5. In Advanced Options make sure you have checked the install for all users.
+
+6. Continue with the installation process as defaults...
+
+
+After Succesfully Installation in Windows Then
+
+PYTHON Run Modes:
+=================
+
+	There are two Run modes available in Python
+
+	1. Interactive Run Mode. (Basic Mode)
+	2. Scripting Run Mode. (Advanced Mode)
+
+	Interactive Run Mode:
+	``````````````````````
+	
+		it is giving chance to run commands line by line Python Offers a Comfortable CLI with the python Shell
+		(>>>.Triple Chevron) which is also known as the "PYTHON Interactive Shell".
+		
+		IDLE ----> Integrated Development Learning Environment
+		
+		Python IDLE shell Colors:
+		``````````````````````````
+				Keywords-----------Orange, Purple
+				Stdin--------------Black
+				Stdout-------------Blue
+				Strings------------Green
+				Comments/Errors----RED
+		
+		Shell Knowledge:
+		````````````````
+	
+			Collection of Commands is called Shell
+
+		DOS Shell(.bat)----------------------Collection of DOS Commands
+		Windows Shell(.wsh)------------------Collection of Windows Commands
+		Unix Shell #(.sh)Standard Shell $--------Collection of Unix Commands
+
+
+
+		Indentation:
+		````````````
+			it is a Space or Tab b/w the triple Chevron & the string/statement. Never spaces,Tabs,Never Spaces+Tabs
+			Indentation is Mandatory.
+
+
+		String:
+		```````
+
+		* Single Quote====> Char(s)
+		* Double Quote====> String or group of Characters
+		* Triple Single Quote====> String Documentation (or) Multiline doc
+		* Triple Double Quote====> Character Documentation (or) MultiCharacter Doc
+
+		Python Help() Function:
+		```````````````````````
+
+		it displays the Documentation string.It is used to see the Help related to modules, keywords, attributes...etc.
+		>>>help(print)   >>>help(input)   >>>help()  >>>help(quit)
+
+		Python Alternative Flavours:
+		````````````````````````````
+
+			CPython   (Python for C)
+			Jython    (Python for JAVA)
+			IronPyton (Python for .Net)
+			PyPy      (Python for Speed)
+			MicroPython(for Micro Processors)
+			PyDoop, PySpark (for Big Data Frameworks)
+			Brython   (Replace JavaScript with Python)
+			RubyPython(Python + Ruby)
+			WinPython (Python Distribution for Windows)
+			PyObjC    (Python for Object C)
+			Anaconda Python (Handling Huge Volume of data processing)
+
+
+		
+	Script Run Mode:
+	````````````````
+		You can store code in a file & use the interpreter to execute the contents of the file, which is called Script.
+	Python Scripts have names that end with " .py " Extension.
+
+	Types of Extensions:
+	````````````````````
+		.py  ----> Python File (Regular script)
+		.py3 ----> Python 3 Script (rarely used)
+		.pyc ----> This is the Compiled byte code / Compiled Script (byte code)
+		.pyd ----> this is basically a windows DLL File
+		.pyo ----> This is Optimized pyc file
+		.pyw ----> Python Script for Windows
+		.pyz ----> Python Script Archived (Compressed or Zip Formated)
+
+
+ 
+	IDE ----> Integrated Development Environment
+	
+			it is a Software application, that provides comprehensive facilities to computer programming for software development.
+
+	Popular IDE's for PYTHON as per 2019-IEEE standards:
+	````````````````````````````````````````````````````
+
+		JetBrains PyCharm
+		Anaconda Supported IDE's
+		Spyder
+		Jupiter
+		VS Code
+		Atom
+		Rodeo
+		Sublime Text
+
+
+		PyDev:
+		```````
+			PyDev is a Python IDE for Eclipse, which may be used in Python, Jython and IronPython development.
+
+		link:http://www.pydev.org/
+
+
+
+
+
+
+
+
+
