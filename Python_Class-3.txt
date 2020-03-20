@@ -1,0 +1,367 @@
+
+			Day-3
+
+Variables:
+``````````
+
+	A Variable is a name that refers to a value. Variable points to the memory location, Where data is read and modified.
+
+it is also called as Identifier's.
+
+
+Python Variable Naming Rules:
+`````````````````````````````
+--> Python Variable Must begin with a letter
+	(a-z, A-Z, or underscore "_")
+--> Python variables should be Characters like Letters (or) numbers (or) _
+
+--> Python Variables are Case Sensitive.
+
+--> Python variables can be any reasonable length.
+
+--> Python Variables must not be reserved Key Words.
+
+--> Variable name should be written in CamelCase (or) PascalCase.
+
+--> should not start with numbers, special characters, keywords.
+
+
+Constants:
+``````````
+
+	Fixed values such as numbers,letters & strings are called Constants.
+It is also called as Literals.
+
+
+Python standard Literals:
+`````````````````````````
+it supports some of the literals like
+
+ string Literal. (****)
+ Numeric Literals. (int,long,float,complex)
+ Boolean literals. (True & False)
+ Special literals. (None)
+ Literal Collections: (list, tuple, set & dict.)
+
+note: Literals Concept is not Applicable in Python, but it is convention to use only UpperCase Characters. It is just convention but we can change the value.
+
+
+Data Types in Python:
+`````````````````````
+
+	Data types represent the type of data present inside a variable.Every value in Python has a data type.since everything is an object in Python Programming, data types are actually Classes & Variables are instances(Objects) of these classes.
+
+Standard Data Types:
+````````````````````
+ 1.Numbers
+ 2.String
+ 3.List
+ 4.Tuple
+ 5.Set
+ 6.Dictionary
+
+type() Function: It returns type of the given Object
+	Syntax: type(object)
+
+	>>> a = 10
+	>>> print(a)  #10  <Obj ###>
+	>>> print(type(a))  #<class 'int'>
+
+------------Examples on Standard Data Types--------
+
+
+Format() Function:
+``````````````````
+	it returns a formatted representation of the given value controlled by the format specifier
+   Syntax:
+   ````````  format(value[,format_spec])
+
+Special Characters:
+```````````````````
+	'<' the field will be left-aligned within the available space.
+	'>' the field will be right-aligned within the available space.
+	'^' Forces the field to be centered within the available space.
+  Eg: print(format(123,'>20'))
+
+
+Formatting the Strings:
+```````````````````````
+	We Can format the strings with variable values by using replacement operator {} and format() method.
+
+   Syntax-1:
+   `````````  {}.format(value)
+    value: can be an integer floating point, numeric constant, string, characters or even variables.
+
+   Syntax-2:
+   `````````  {}{}.format(value_1,value_2)
+
+   Syntax-3:
+   `````````  {}{}{}.format(value_1,value_2,value_3)
+
+
+using % :
+`````````
+the formatting using % is similar to that of 'printf' in C-Programming Language.
+
+	%d===> integer
+	%f===> float
+	%s===> string
+	%x===> hexadecimal
+	%o===> Octal
+  Syntax:
+  ```````` print("formatted string"%(Variable list))
+
+    Example:
+    ````````` 
+     	print("%s is good one"%("Python"))
+	print("%s is having %d Years"%("Python",30))
+
+
+
+Type Conversion (or) Type Casting:
+```````````````````````````````````
+
+	Since Python is Dynamically typed, you may want to convert a value into another type. Every value in python has a data type.
+
+Python Explicit data type Conversion:
+======================================
+
+ Primitive data structures:
+ ``````````````````````````
+	Integers  Float  Strings  Boolean
+
+ Non-Primitive data Structures:
+ ``````````````````````````````
+
+	Lists  Tuple  Sets  Dictionary
+
+List of Python functions
+`````````````````````````
+
+	1.int(x[,base])
+	2.bool()
+	3.float(x)
+	4.str(x)
+	5.list(s)
+	6.tuple(s)
+	7.Set(s)
+	8.dict(d)
+	9.ord(x)
+	10.chr(x)
+	11.Complex(real,img)
+	12.eval()
+
+
+int('x'[,base]) :
+	it converts a number in given base to decimal
+eg.
+    a = 84
+	b = bin(a)
+	print(b)
+	print(int(b, 2))
+
+bool(value) :
+	it converts the value into a boolean & usefull in type casting
+None
+False
+zero of any numeric type....0,0.0,0j-(or) 0+0j
+
+eg.
+	print(bool(True)) # True
+	print(bool(0))		#false
+	print(bool("Hello"))	#True
+	print(bool(None))	#false
+
+
+
+float(x):
+	to convert x to a floating point number.
+
+    Syntax:
+	     float(value)
+
+
+eg.
+ 
+Pyint=1
+print(type(PyInt)) # <class 'int'>
+PyFloat= float(Pyint)
+print(type(PyFloat)) # <class 'float'>
+print(PyFloat) #1.0
+
+
+str():
+	it is used to convert integer into a string
+
+	syntax:
+		str(value)
+
+note:if we want to convert str type to int type, string must contain only integral value
+
+
+
+
+list():
+	it is used to convert any data type to a list type.
+
+      Syntax:
+	    list(items)
+
+
+
+tuple():
+	it is used to convert to a tuple.
+
+     syntax:
+	tuple(items)
+
+
+
+set():
+	it returns the type after converting to set
+
+    Syntax:
+	set(items)
+
+
+
+
+dict():
+	it is used to convert a tuple of order(key,value) into a dictionary.
+ Syntax:
+ ```````
+	dict(key,value)
+
+eg:
+
+PyTuple=((1,"PY"),(2,"ML"),(3,"Dl"),(4,"AI"),(5,"DS"))
+print(type(PyTuple))
+print(PyTuple)
+PyDict=dict(PyTuple)
+print(type(PyDict))
+print(PyDict)
+
+
+ord():
+	it is used to Convert a Character to integer
+
+ syntax:
+	ord('Char')
+
+example:
+
+	print(ord('త'))
+
+
+chr(i):
+	it is used to return the string representation of a character whose Unicode code point is the integer.
+
+ syntax:
+	chr(number)
+example:
+	print(chr(3108))
+
+
+complex():
+	this function converts real numbers to complex number.
+
+    syntax:
+	complex(real,imag)
+
+eg:
+````
+a=1
+print(type(a)) # <class 'int'>
+print(a) #1
+b=complex(a)
+print(type(b)) # <class 'complex'>
+print(b)  # 1+0j
+
+
+eval():
+	The eval() function evaluates or executes an argument. If the argument is an expression, eval() evaluates the expression.
+
+example:
+````````
+expr = input("Enter the function(in terms of x):")
+x = int(input("Enter the value of x:"))
+y = eval(expr)
+
+
+Order of Operations:
+````````````````````
+     when an expression contains more than one operator, the order of evaluation depends on the order of operations.for mathematical operators, Python follows mathematical convention. The acronym PEMDAS is a useful way.
+
+ PEMDAS:--- Parentheses Exponentiation Multiplication Division Addition Subtraction.
+
+eg.:
+````
+	2*(3-1) ==> 
+	(1+1)**(5-2)==>
+	1+2**3===>
+	2*3**2===>
+	2*3-1===>
+	6+4/2===>
+
+
+Python Operators:(Intro)
+`````````````````
+
+	An Operator is a character that represents an action.
+Python supports different types of operators. Like...
+
+(*) Arithmetical Operators
+(*) Comparision Operators -or- Relational Operators.
+(*) Assignment Operators.
+(*) Logical Operators.
+(*) Special Operators.[***]
+(*) Bitwise Operators.
+(*) Ternary Operators.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
