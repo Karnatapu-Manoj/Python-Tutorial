@@ -1,0 +1,15 @@
+1.create one folder on the desktop.(Any location)
+2.create a .py file in that folder
+3.go to command prompt, change to the current folder location.
+-cd Desktop
+-cd Folder_name
+-python MyScript.py
+-python & return key
+>>> import py_compile
+>>> py_compile.compile("filename.py")
+
+4. __pycache__ folder created automatically with byte.code(.pyc)
+-cd __pycache__
+-python file.cpython-37.pyc,
+	to execute byte code directly without source code.
+
