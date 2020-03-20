@@ -1,0 +1,140 @@
+			Day-2
+
+What is Anaconda?
+`````````````````
+		the Most Popular Python Data Science Platform. It is a freemium open source distribution of the Python and RPL's for Large-Scale data procesing, predictive analytics, Scientific Computing, that aims to simplify package management & development.
+
+	1.Machine Learning  		2.Deep Learning
+	3.Artificial Intelligence 	4. Internet of Things
+	5.Data Science	
+
+What is PyCharm:
+````````````````
+
+	It is the Best IDE for realtime Python projects. It Provides code analysis, a graphical debugger, an integrated unit 			tester & supports web development with Django Frameworks. 
+	
+
+	It is a Cross Platform & works 100% perfectly on Windows, Linux/Unix, MacOs
+	
+	2 Editions:
+	```````````
+		Community Edition(full -Free & open source)
+		Professional Edition (Commercial-$98)	
+
+	Features Of PyCharm:
+	````````````````````
+		1.Intelligent Coding Assistance.
+		2.Built-in Developer Tools.
+		3.Web Development
+		4.Scientific Tools.	
+
+	
+What is Spyder?
+```````````````
+
+		It is a Simple & user Friendly IDE for Learning & Teaching Purpose. And implementing Small Projects,Data Analitical Solutions, Implementation of Numpy,Pandas,MatPlotLib, Graphsheets...etc.
+
+		SPYDER ----> ('S'cientific 'PY'thon 'D'evelopment 'E'nvi'R'onment)
+
+	It is a Powerful IDE for PYTHON language with advanced editing, interactive testing, debugging features...!
+
+	General Features:
+	`````````````````
+
+		iPython     ----> Enhanced interactive Python interpreter
+		NumPy       ----> Numerical Python-Linear Algebra
+		SciPy       ----> Scientific Python-Signal & Image Processing.
+		Matplotlib  ----> Interactive 2D/3D plotting
+		Pandas      ----> for Data Analysis with Data Frames
+		SciKit-Learn----> It is a Machine Learning Library.
+
+What is Jupyter:
+````````````````
+
+		Formerly known as IPython Notebook. It is a Server Client application that allows editing and running notebook documents via a web browser.
+
+	Features:
+	`````````
+
+		1.Edit/Run code in browser
+		2.It Supports 40+ Programming Languages.
+		3.share notebooks; using email,Dropbox,GitHub.
+		4.BigData Integration.
+
+
+
+
+					FAQ's on Pre-Core Python Concepts
+				==================================================
+
+	(#). Define Scripting ?
+	(#). Types of Scripting ?
+	(#). Difference between Programming Lang. & Scripting Lang.  ?
+	(#). Why Scripting is Popular ?
+	(#). What is Paradigm ?
+	(#). Define PYTHON ?
+	(#). Features of PYTHON ?
+	(#). Why Python is General Purpose ?
+	(#). Who & how Python developed ?
+	(#). Real-Time Applications of Python ?
+	(#). Any 5 PYTHON Libraries ?
+	(#). IDLE & IDE stands for ?
+	(#). Name of the Python Prompt ?
+	(#). Can we clear Screen in IDLE ?
+	(#). Python Keywords list ?
+	(#). How to Display Python Version ?
+	(#). Types of Quotes in Python ?
+	(#). Comment Notation is _______ ?
+	(#). Python Interpreter Architecture ?
+	(#). Python File Extensions & types ?
+	(#). What is PyCharm & How to Debug script in PyCharm ?
+	(#). What is Anaconda ? What is Spyder ? What is Jupyter NoteBook ?
+	(#). Usage of Different IDE's ?
+
+
+					import <package_name>
+					print(dir(<package_name>)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
