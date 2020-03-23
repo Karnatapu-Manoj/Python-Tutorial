@@ -1,0 +1,319 @@
+
+						
+Order of Operations:
+````````````````````
+     when an expression contains more than one operator, the order of evaluation depends on the order of operations.for mathematical operators, Python follows mathematical convention. The acronym PEMDAS is a useful way.
+
+ PEMDAS:--- Parentheses Exponentiation Multiplication Division Addition Subtraction.
+
+eg.:
+````
+	2*(3-1) ==>
+(1+1)**(5-2)==>
+	1+2**3 ===>
+	2*3**2 ===>
+	2*3-1  ===>
+	6+4/2  ===>
+
+
+Python Operators:
+`````````````````
+
+	An Operator is a character that represents an action.
+Python supports different types of operators. Like...
+
+(*) Arithmetical Operators
+(*) Comparision Operators -or- Relational Operators.
+(*) Assignment Operators.
+(*) Logical Operators.
+(*) Special Operators.
+(*) Bitwise Operators.
+(*) Ternary Operators.
+
+
+Arithematical Operators:
+````````````````````````
+	Python supports the following list of arithematical operators for mathematical Computations.
+		Addition 	 	 ( + )
+		Subtraction 	 ( - )
+		Multiplication	 ( * )
+		Division 	 	 ( / )
+		Modulus  	 	 ( % )
+		Exponent 	 	( ** )
+		Floor Division  ( // )
+
+Floor Division (//):
+`````````````````````
+	Division that results into whole number adjusted to the the left in the number line.
+			-----it always returns only integer value------
+
+eg.
+   2/3===>0.6666666
+   2//3===> 0
+
+  3/4====>0.75
+  3//4=====> 0
+
+
+Python Comparision Operators:
+``````````````````````````````
+
+	using these Operators we can able to compare numerical & string values. These are popularly known as relational operators.
+
+	
+		==       equal
+
+		!=       not-equal
+
+		>        greater-than
+
+		<        less-than
+
+		>=       greater-than Equal
+
+		<=       less-than Equal
+
+
+
+Python Assignment Operators:
+````````````````````````````
+
+	Python supports the following list of different assignment operators.
+
+Operators:
+
+	 =     assigning
+	+=    ADD - assign
+	-=    SUB - assign
+	*=    MUL - assign
+	/=    DIV - assign
+   //=    FLR - assign
+    %=    MOD - assign
+   **=    EXP - assign
+
+Python Logical (Boolean) Operators:
+````````````````````````````````````
+	there are following logical operators supported by Python Scripting Language.
+
+
+	Operator			Description
+	`````````			````````````
+
+      and (logical AND)	     if both the operands are true then condition becomes true
+
+
+      or (logical OR)        if any of the two operands are non-zero then condition becomes true
+
+
+      not (logical NOT)     used to reverse the logical statement of its operand.
+
+Python Special Operators:
+`````````````````````````
+	Python scripting language offers some special type of operators:
+
+
+	(1). Membership Operator
+	(2). Identity operator
+
+Python Membership Operator:
+```````````````````````````
+	They are used to test whether a value or variable is found in a sequence(string,list,tuple,set & dictionary)
+
+note:
+`````  in a Dictionary we can only test for presence of Key, not the value.
+
+Operator Meaning:
+``````````````````
+	in 		----> True if value/Variable is found in the sequence
+    not in 	----> True if value/variable is not found in the sequence.
+
+example:
+
+	PyStr="Python"
+	print('P' in PyStr)
+	print('o' in PyStr)
+	print('N' in PyStr)
+
+Python Identity Operator:
+`````````````````````````
+	They are used to check if two values(or variables) are located on the same part of the memory. Identity operators compare the memory location of two objects.
+
+Operator Meaning:
+`````````````````
+
+	is  	 ----------> True if the operands are identical
+    is not   ----------> True if the operands are not identical
+
+example:
+
+	A=B=[1,2,3]
+	print(A is B) 
+	C=[1,2,3]
+	print(A is C)
+
+
+
+
+
+What is the Difference b/w "is" and "=="  :
+```````````````````````````````````````````
+
+	The "is" operator may seem like the same as the equality operator but they are not same. The is Checks if both the variables point to the same object, Whereas the == sign checks if the values for the two variables are the same.
+
+	example:
+		A=B=[1,2,3]
+		C=[1,2,3]
+		print(A is C)
+		print(A == C)
+
+Python Bitwise Operators:
+`````````````````````````
+	These are used to perform bit operations. All the decimal values will be converted into binary values & bitwise operators will work on these bits.
+
+	&  ----- Bitwise AND
+	|  ----- Bitwise OR
+	^  ----- Bitwise exclusive OR
+	~  ----- Bitwise Complement
+	<< ----- Bitwise Left shift
+	>> ----- Bitwise Right shift
+
+
+ Bitwise AND (&) :
+ ``````````````````
+	It compares each bit of first operand to the corresponding bit of the second operand. If both bits are 1, the corresponding result bit is set to 1.
+
+	example:
+	
+	a=10 ; b=20
+	print(a&b) # 0
+
+	Analysis:
+	``````````
+		we declare 2 integers a and b, the binary form of 
+
+	    10 = 0 0 0 0  1 0 1 0 		bin(10)
+	    20 = 0 0 0 1  0 1 0 0		bin(20)
+		 `````````````````
+		 0 0 0 0  0 0 0 0  ===> result is zero(0) 
+
+
+
+Python Bitwise OR (|) :
+```````````````````````
+	It takes two bit patterns of equal length. the result in each position is 0 if both bits are 0, while otherwise, the result is 1 (Any one 1 the result is 1)
+
+
+	example:
+
+	a = 9 ; b = 65
+
+	a = 0 0 0 0  1 0 0 1
+	b = 0 1 0 0  0 0 0 1
+===================================
+	    0 1 0 0  1 0 0 1   ====> 73
+
+	print(a|b)
+
+
+Python Bitwise exclusive OR operator ( ^ )  :
+`````````````````````````````````````````````
+
+	It Compares each bit of its first operand to the corresponding bit of its second operand. If one bit is 0 and the other bit is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0 (identical is 0)
+
+
+
+	example:
+	
+	a = 9 ; b = 67
+	print(a^b)  #72
+
+
+Python Binary Left Shift ( << ):
+`````````````````````````````````
+		The left operand value is moved left by the number of bits specified by the right operand.
+
+	a = 10  # 10 = 1 0 1 0
+	a<<2    # 40 = 1 0 1 0 0 0
+
+Python Binary Right Shift ( >> ):
+``````````````````````````````````
+		The Left operands value is moved right by the number of bits specified by the right operand.
+
+	a = 10 # 10 = 1 0 1 0
+	a>>2   #  2 =     1 0
+
+Python Ternary Operator :
+`````````````````````````
+
+	Ternary operators also known as conditional expressions. It was added to Python in Version 2.5 from 2004. It allows to test a condition in Single line.
+
+	Syntax:
+		[ on_true ] if [ expression ] else [on_false]
+
+example:
+	x = 10 ; y = 20
+	print(x if x>y else y)   #20
+
+	Max = x if x>y else y
+	print(Max) #20
+
+	
+
+Python Operator Precedence:
+```````````````````````````
+
+	The Following table lists all operators from highest precedence to lowest.
+
+	(1). Parenthesis are always respected.  (highest priority)
+	(2). Exponentiation (raise to a power)
+	(3). Multiplication, Division and Remainder
+	(4). Addition & subtraction
+	(5). Left to Right
+
+	Operator                  Description
+====================================================
+	  ** 		|    	Exponentiation 
+				|
+	~,+,-		| Complement, Unary Plus & minus
+				|
+   * / % //		| Multiply, Divide, Modulo & Floor Division
+				|
+	+ -			| Addition & Subtraction
+				|
+	>> <<		| Bitwise Right & Left Shift
+				|
+	 &	 		| Bitwise 'AND'
+				|
+    ^ |			| Bitwise Exclusive 'OR' 
+				|	& regular 'OR'
+				|
+   < <= > >=	| Comparision operators
+				|
+      == !=		| Eqality Operators
+				|
+ = %= /= //= -=	|
+	+= *= **=	| Assignment Operators
+				|
+  is , is not	| Identity Operators
+				|
+  in , not in	| Membership Operators
+  	 			|
+not , or , and 	| Logical Operators
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
