@@ -1,0 +1,195 @@
+
+					Difference b/w Python & Java
+			 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Java :
+========
+
+(1). In 1995, by James Gosling.
+(2). Statistically typed, all variable names must be Explicitly declared.
+(3). Length and less compact code, Typing static, Strong & Safe.
+(4). Uses braces for structuring code.
+(5). Faster but complex syntax.
+(6). Lesser programmer productivity.
+(7). No perfect libraries for ML, DL, AI, NLP & IOT.
+
+	Example:
+	============
+	Java Code
+	----------
+	public class HelloWorld
+	{
+		public static void main(string[]args)
+		{
+			system.out.println("Hello, World...!");
+		}
+	}
+
+	Output:
+	--------
+	Hello, World...!
+
+
+Python :
+=============
+
+(1). In Dec, 1989 but officially released in Feb, 1991 - by Guido Van Rossum on Amoeba-OS.
+(2). No need to Declare anything, Dynamically Typed.
+(3). Smaller and Compact code, Typing Duck, Dynamic & Strong.
+(4). Uses Indentation for structuring code.
+(5). Faster to learn, Easy syntax.
+(6). Higher programmer productivity.
+(7). Extensive libraries for ML, DL, AI, NLP & IOT.
+
+
+	Example:
+	===========
+	Python Code
+	-------------
+
+	print("Hello, world...!")
+
+	Output:
+	--------
+	Hello, World...!
+
+
+	
+	
+					Python Commenting's
+		 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Comments :
+`````````````
+	Comments are non-executable statements or ignore statements. Using these comments we can declare user defined or customized statements in the source code. Python supports two types of comments
+
+	(1). Single line commenting.
+	(2). Multi line commenting.
+
+Single Lined Comments :
+========================
+		
+		These comments are restricted to a specific line, it always denotes with Pound(#) Notation.
+
+Example :
+``````````
+>>> # hello this is a comment
+>>> # These comments are not cared by python
+>>> # These are single lined comments which are using #(pound) notation.
+
+
+
+Multi Lined Comments :
+========================
+
+		These comments are applicable to single or more lines. 
+	
+	**********It can also be denoted with pound(#) Notation.*********
+
+Example :
+``````````
+# Name of the project : ****
+# Name of the Module : ****
+# Task Assigned Date : ***** (mm/dd/yyyy)
+# Task Completion Date : *****(mm/dd/yyyy)
+# Task assigned by : ***** (Module/project Lead)
+# Task received by : ***** (Team Lead)
+# Task Reviewed Comments : ***** (Client)
+# Task Developed by : ***** (Developer)
+
+
+As it is a Hard Coding(Not recommended in real-time software industry) of Commenting and Providing the code description is little difficult to use the pound notation. So, To overcome this issue, we use DOCStrings method.
+
+Doc-Strings :
+````````````````
+
+	Doc-Strings are used for providing the document for the project/task/module. these can be implemented by using either Triple-Single-Quotes ('''<some content> ''') or 
+Triple-Double-Quotes ("""<some content>""").
+
+Example :
+~~~~~~~~~~~
+"""
+The title of the Project/ Some short description
+
+From here onwords the description of the project and the 
+complete overview of the project is provided. this can have multiple lines and multiple characters in a single line is also accepted, there is no restriction. The only rule to be followed is , after the beginning of triple-Single/Double-Quotes the first line can have any content, but after the first line the second line should left blank & the Document begins from the third line onwords. As similar to the syntax of this example given. 
+"""
+
+
+Python Architecture :
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+	After Successfull Deployment(Which means installation in Real-time Industry) of Python, It is a combination of interpreter & Support Libraries.
+
+Interpreter :- Run's Your Python Code.
+
+Support Library :- Built-in modules, function, constants, types, exceptions, datatypes, file-formats etc...
+
+
+Beginner's point of view about Interpreter :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	
+	Interpreter is a software, which takes source code, reads it line by line and executes it line by line to produce the output.
+
+
+		Source code ---> Interpreter ---> Running code/output
+
+Actual Working of Interpreter :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+									Interpreter
+					 _______________________________________________________
+					|														|		
+	Source code---->|----> Compiler ---> ByteCode ---> Virtual Machine----> |---> RunningCode
+					|										  				|
+					|_________________________________________|_____________|				
+															  |
+									 ___________			  |
+									|			|			  |
+									| Supported |			  |
+									|  Library  |_____________|
+									|  Modules  |
+									|___________|						
+
+
+	In Compiled Programming languages, Compiler converts the source code into machine code or binary code, which is directly executed by the machine itself. In Python compiler is using to convert the source code(.py) into byte code(.pyc).
+
+	
+What is Byte Code in Python ?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Byte code is easily readable by Python Virtual Machine & Source code is easily understandable by programmers.
+(1). Low level
+(2). Platform Independent
+(3). Efficient
+(4). Intermediate
+(5). Representation of your source code.
+
+	PVM will read the byte code line by line & execute every line & produce output.In that process PVM uses all your library Modules.
+
+What are PYC files :
+~~~~~~~~~~~~~~~~~~~~~~
+		Python Automatically compiles your script to compiled code, so called byte code, before running it.
+
+	__pycache__ :
+		
+			It is a folder containing Python-3 byte-code compiled & ready to be executed.
+
+Example 1:
+````````````
+>>> import py_compile
+>>> print(dir(py_compile))	 
+
+Example 2:
+````````````
+>>> import compileall
+>>> print(dir(compileall))
+
+Example :
+```````````
+>>> import py_compile
+>>> py_compile.compile("MyScript.py")
+
+For more Details see the Byte Code convertion document in this repository...
+
+
+
