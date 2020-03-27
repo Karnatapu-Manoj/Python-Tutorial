@@ -1,0 +1,443 @@
+		
+
+			
+
+Python Control Structures:
+```````````````````````````
+
+	In Python programming, Control Structures are Classified into:--
+
+	(1). Sequential Control Structures  
+	(2). Selection Control Structures
+	(3). Iterative Control Structures
+
+			Control Flow
+	   ````````````````````````
+
+Conditional Statements:
+```````````````````````
+
+		if
+		if - else
+		if - elif
+		if - elif - else
+		
+Transfer Statements:
+``````````````````````
+
+		break
+		Continue
+		Pass
+
+Iterative Statements:
+```````````````````````
+
+		for
+		while
+
+(1). Sequential Control structures:
+````````````````````````````````````
+
+	It get executes the lines of code in Sequential Order.
+
+
+		Example:
+		`````````
+			print("First line")
+			print("Second line")
+			print("Third line")
+
+	eg:
+		
+		print("First line") ; print("Second line") ; print("Third line")
+
+
+(2). Selection Control structures:
+```````````````````````````````````
+
+	It is popularly known as Python Decision Making. Python Programming language provides following types of decision making statements.
+
+	(1)  if statement ( One - Way Decisions )
+	(2)  if else statement ( Two - Way Decisions )
+	(3)  if..elif..else statement ( Multi - Way Decisions )
+	(4)  Nested if..else ( Inner Decisions )
+	(5)  Negative Conditions (Using Membership Operators)
+
+In Conditions, the following Comparision ( or ) Relational Operators Commonly used:
+
+		==       equal
+
+		!=       not-equal
+
+		>        greater-than
+
+		<        less-than
+
+		>=       greater-than or Equal
+
+		<=       less-than or Equal
+
+
+
+ One - Way Decisions :
+```````````````````````
+   Python if statement:
+   =====================
+
+		It executes a set of statements conditionally, based on the value of a logical expression.
+
+
+
+	Syntax:
+
+	if expression:
+
+		Statement - 1
+		Statement - 2
+		Statement - 3
+		.....
+
+
+  Example:
+````````````
+
+	x = int(input("Enter any number : "))
+	if x > 0:
+	     print(" +ve number ")
+	if x < 0:
+	     print(" -ve number ")
+    
+
+	note:
+		the above example is Hard-Coding which is not encouraged.
+	   to avoid these kind of Coding technique, we go with if...else statement.
+
+
+ Two - Way Decisions :
+```````````````````````
+ Python if..else statement:
+ ==========================
+
+		An else statement can be combined with an if statement. An else statement contains the block of code that executes, if the conditional expression in the if statement resolves to " 0 " or a " False " value.
+
+
+	Syntax:
+
+	if expression:
+
+		Statement - 1
+		Statement - 2
+		Statement - 3
+		.....
+	else:
+	
+		Statement - 4
+		Statement - 5
+		Statement - 6
+		.....
+
+
+  Example:
+```````````
+	
+	x = int(input("Enter any number : "))
+	if x > 0:
+	     print(" +ve number ")
+	else:
+	     print(" -ve number ")
+
+
+	x = int(input("Enter any number : "))
+	if x % 2 == 0:
+	     print(" Even number ")
+	else:
+	     print(" Odd number ")
+
+
+
+ Multi - Way Decisions :
+`````````````````````````
+  Python if..elif..else statement:
+  ================================
+
+		The elif statement allows you to check multiple expressions for True and execute a block of code as soon as one of the Conditions evaluated to TRUE.
+
+	Syntax:
+
+	
+	if expression_1:
+
+		Statement - 1
+		Statement - 2
+		Statement - 3
+		.....
+	elif expression_2:
+	
+		Statement - 4
+		Statement - 5
+		Statement - 6
+		.....
+
+	elif expression_3:
+	
+		Statement - 7
+		Statement - 8
+		Statement - 9
+		.....
+	
+	elif expression_4:
+	
+		Statement - 10
+		Statement - 11
+		Statement - 12
+		.....
+
+	else:
+	
+		Statement - 13
+		Statement - 14
+		.....
+
+ Example:
+
+x = int(input("Enter any number : "))
+if x > 0:
+    print(" It is a Positive Number")
+    print("..........Always Be Positive....")
+elif x < 0:
+    print("It is a Negative Number")
+    print(".....Negativity Kills a Person....")
+else:
+    print("The Entered Number is Zero")
+
+ Example 2:
+
+Marks = int(input("Enter the marks for Student : "))
+if Marks >= 90 and Marks <=100:
+    print(" A+ Grade ")
+elif Marks >= 80 and Marks < 90:
+    print(" A Grade ")
+elif Marks >= 70 and Marks < 80 :
+    print(" B Grade ")
+elif Marks >= 60 and Marks < 70  :
+    print(" C Grade ")
+elif Marks >= 50 and Marks < 60  :
+    print(" D Grade ")
+elif Marks >= 40 and Marks < 50  :
+    print(" E Grade ")
+else:
+    print(" Failed ")
+
+
+ Inner Decisions :
+```````````````````
+	In general nested if..else statement is used when we  want to check more than one conditions. Conditions are executed from top to bottom & check each condition whether it evaluates to TRUE or not. if a true condition is found the statement(s) block associated with the condition executes otherwise it goes to next condition.
+
+
+
+	Syntax:
+
+	
+      if expression_1:
+
+	    if expression_2:
+
+			Statement - 1
+			Statement - 2
+			Statement - 3
+			.....
+	    else:
+	
+			Statement - 4
+			Statement - 5
+			Statement - 6
+			.....
+     else:
+	
+		Statement(s) - 7
+		Statement(s) - 8
+
+
+ Example:
+``````````
+
+x = int(input("Enter any number : "))
+print("the entered value is : ",x)
+if x != 0 :
+    if  not x > 0:
+        print(" -ve ")
+    else:
+        print(" +ve number ")
+else:
+    print("Entered number is Zero it is Null Value")
+
+
+ Negative Conditions :
+```````````````````````
+	If a condition is true the not operator is used to reverse the logical state, then logical not operator will make it FALSE.
+
+  Example:
+````````````
+ 	x = int(input("Enter any number : "))
+
+	print(" the value of x =", x)
+
+	if not x > 0 :
+		print(" -ve number ")
+	else:
+		print(" +ve number ")
+
+
+
+(3). Iterative Control Structures :
+````````````````````````````````````
+	In general, statements are executed sequentially:
+		the first statement is executed first, followed by the second, and so on....!!
+
+Types of Loops:
+````````````````
+
+	for
+
+	While
+
+	nested loops
+
+	break, continue & pass(Keyword)
+
+
+For Loop:
+``````````
+
+	it is used to iterate over the items of any sequence including the Python list, string, tuple, etc..,
+
+	Syntax:
+	```````
+	for variable_name in Sequence:
+		Statement-1
+		Statement-2
+
+
+  Example:
+````````````
+	for char in "PYTHON" :
+		print(char)
+
+
+    Analysis:
+```````````````
+
+	for ---------> iterator
+	char---------> Variable
+	in-----------> Operator
+	"PYTHON"-----> Iterable
+	: -----------> Indentation
+
+{ for char in "PYTHON" : } -----> Iteration
+
+
+ While Loop:
+`````````````
+
+	While loop is used to execute number of statements or body till the condition passed in while is TRUE. Once the condition is FALSE, the control will come out of the loop.
+
+	Syntax:
+	```````
+
+		while <expression> :
+			Statement - 1
+			Statement - 2
+			......
+
+
+ Example:
+``````````
+	n = int(input("Enter any number : "))
+	while n <= 5 :
+		n += 1
+		print(n)
+		
+		
+
+Break Statement:
+`````````````````
+
+	To Break out from a loop, we go with keyword " break "
+
+	A break statement inside a loop terminates the loop immediately
+
+	Syntax:
+	````````
+		break
+
+	Example:
+	`````````
+
+		a = [1,2,3,4,5]
+		for item in a:
+			if item == 4:
+			     break
+			print(item)
+		
+
+Continue Statement:
+````````````````````
+	The Continue statement is used to tell Python to Skip the  rest of the statements in the current loop block & to continue to the next iteration of the loop.
+		------( or )------
+
+	A Continue Statement jumps to the next iteration of the loop, skipping any code on between.
+
+   Syntax:
+`````````````
+	
+	continue
+
+  Example:
+`````````````
+
+	a = [1,2,3,4,5]
+	for item in a :
+		if item == 3 :
+		     continue
+		print(item)
+
+
+
+Pass KeyWord :
+```````````````
+	It is used when a statement is required syntactically but you do not want any command (or) code to execute.
+
+	Why pass ?
+
+	- It is an Empty Statement
+	- It is Null Statement
+	- It results into no operation ( NOP )
+
+	Syntax:
+	````````
+		pass
+
+
+Difference b/w Comment & pass :
+````````````````````````````````
+
+Comment:
+
+	- Non Executable statements
+	- To write more information about logic
+	- ' # ' it is pound notation for Commenting.
+
+Pass :
+	
+	- Always Executable Statements
+	- No Operation.
+	- ' pass ' keyword is the notation itself.
+
+			
+
+
+
+
+
+
+
