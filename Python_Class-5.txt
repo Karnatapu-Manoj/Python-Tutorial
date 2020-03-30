@@ -243,7 +243,7 @@ else:
 	    if expression_2:
 
 			Statement - 1
-			Statement - 2
+			Statement - 2			exp-1 : True & exp-2 : False
 			Statement - 3
 			.....
 	    else:
@@ -354,7 +354,7 @@ For Loop:
 ``````````
 	n = int(input("Enter any number : "))
 	while n <= 5 :
-		n += 1
+		n += 1  ==> n = n + 1
 		print(n)
 		
 		
