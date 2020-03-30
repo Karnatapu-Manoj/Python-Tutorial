@@ -1,0 +1,370 @@
+	
+
+
+
+						Working with Python File Handeling.
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+File is collection of related information. In Python, a file operation takes place in the following order.
+
+(1). Open a file.
+(2). append a file.
+(3). Read or write a file.
+(4). Close the file.
+
+Types of Files:
+````````````````
+	There are 2 types of files.
+Text File:
+```````````
+	Generally we use text files to store ASCII character data Ex: Myfile.txt
+
+Binary File:
+`````````````
+	Generally we use binary files to store binary data like Images, Video files, Audio files etc..
+	Ex: Hellosong.mp3, mysong.mp4, Pythonlogo.png,...
+
+Opening a File:
+````````````````
+	Python has a built-in function open() to open a file. This function returns a file Object. It returns a "filehandle" - a variable used to perform operations on the file. file handle has..!
+(1). Open	(2). Write 	(3). Read 	(4). Close.
+
+Syntax:
+````````
+	fileobject = open(file_name[,access_mode][,buffering])
+
+Parameter details:
+===================
+
+	file_name   : It contains the name of the file. It is always string.
+	access_mode : Default file access mode is read(r)
+	buffering   : If the buffering value is set to 0, no buffering takes place if 1, line buffering is performed.
+
+Example:
+
+FileObj = open("Any Name.txt")   #relative path
+FileObj = open("C:/Python37/Any Name.txt")	#Abssolute path
+
+File Different Modes:
+``````````````````````
+	Modes	|     	Description
+----------------------------------------------------------------------
+	r		|	Opens a file for reading only
+   'b'		|	Opens in binary mode
+	r+		|	Opens a file for both reading & writing
+	rb+ 	| 	Open a file for both reading & writing in binary format
+	w		|	Opens a file for writing only
+	a		|	Opens a file for appending	
+	a+		|	Opens a file for both appending and reading
+   't'		|	Open in text mode (default)
+	x		|	Open a file for exclusive creation. If file already exists operation fails.
+
+The File Object attributes:
+```````````````````````````
+	Once a file is opened and you have one file object, you can get various information related to that file.
+
+	Attribute		|	Description
+------------------------------------------------------------------------
+	file.closed		|	Returns True , if file is closed. False otherwise
+	file.mode		|	Returns access mode
+	file.name		|	Returns name of the file
+	readable()		|	Returns boolean value indicates that whether file is readable or not
+	writable()		|	Returns boolean value indicates that whether file is writable or not
+
+Example 1:
+
+MyFileObj = open("MyFile.txt")
+print(MyFileObj.mode)		#r
+print(MyFileObj.name)		#MyFile.txt
+print(MyFileObj.closed) 	#False
+print(MyFileObj.readable())	# True
+print(MyFileObj.writable())	#False
+
+Note:
+``````	
+	MyfileObj is file current object, It contains all methods and properties related to file operations...!
+	
+	When working with files in text mode, it is highly recommeneded to specify the encoding type.
+
+Syntax:
+````````
+	FileObj = open("File.txt",mode = 'r',encoding = 'utf-8')
+
+For better understanding of(Unicode Transformation Format) UTF-8 https://www.unicode.org
+
+Example.2:
+```````````
+
+MyFileObj = open("MyFile.txt",mode = 'r',encoding = 'utf-8')
+print(MyFileObj.mode)		#r
+print(MyFileObj.name)		#MyFile.txt
+print(MyFileObj.closed) 	#False
+print(MyFileObj.readable())	# True
+print(MyFileObj.writable())	#False
+
+Note:
+`````
+	This method is not entirely safe. If an exception occurs when we are performing some operation, with the file, the code exits without closing the file. A Safer way is to use a try... finally block.
+
+Example.3:
+```````````
+try:
+    MyFileObj = open("MyFile.txt",mode = 'r',encoding = 'utf-8')
+    print(MyFileObj.mode)		#r
+    print(MyFileObj.name)		#MyFile.txt
+    print(MyFileObj.closed) 		#False
+    print(MyFileObj.readable())		#True
+    print(MyFileObj.writable())		#False
+finally:
+    print("Finally Block statement executed")
+
+Note:
+``````
+	This way we are guaranteed that the file is properly read & closed if the file existed, otherwise, causing program flow to stop.
+
+Example.4:
+````````````
+try:
+    MyFileObj = open("MyFile.txt",mode = 'r',encoding = 'utf-8')
+    print(MyFileObj.mode)		#r
+    print(MyFileObj.name)		#MyFile.txt
+    print(MyFileObj.closed) 		#False
+    print(MyFileObj.readable())		#True
+    print(MyFileObj.writable())		#False
+except IOError:
+    print("Sorry file Not Found")
+finally:
+    print("Finally Block statement executed")
+
+Note :
+	In the above script if file existed read successfully, if not return except part. But every time we should close the file externally/ explicitly...!
+
+	The Best way to do this is using the 'with' statement. This ensures that the file is closed when the block inside with is existed. we don't need to explicitly call the close() method. It is done Implicitly
+
+
+Syntax:
+`````````
+
+with open("MyFile.txt", mode='r',encoding='utf-8') as MyFileObj:
+	
+Example:
+
+try:
+    with open("MyFile.txt", mode='r',encoding='utf-8') as MyFileObj:
+		print(MyFileObj.mode)		#r
+   		print(MyFileObj.name)		#MyFile.txt
+    	print(MyFileObj.closed) 		#False
+    	print(MyFileObj.readable())		#True
+    	print(MyFileObj.writable())		#False
+except IOError:
+    print("Sorry file Not Found")
+finally:
+    print("Finally Block statement executed")
+
+Writing Data into File:
+````````````````````````
+	In Order to write into a file we need to open it in write 'w', append 'a' or exclusive creation 'x' mode.
+
+Note:
+	We need to be careful with the 'w' mode as it will overwrite into the file if it already exists.
+
+write() Method:
+````````````````
+	Using this method we can write a specific line in the file.
+Syntax:
+	Object.write("Text").
+writelines() Method:
+`````````````````````
+	using this method we can write a specific multiple lines in the file.
+Syntax:
+	Object.writelines("Text lines")
+Example:
+
+try:
+    with open("MyFile.txt", mode='r+',encoding='utf-8') as FO:
+
+		FO.write("Welcome to Python \n")	
+		FO.writelines(""" Hello it is Multiline
+					Data in Python Programming,
+					@File Operations""")
+		print("File Created Successfully")
+
+except IOError:
+    print("Sorry file unable to create")
+
+finally:
+    print("Finally the above Operation is done")
+
+Reading from a File:
+`````````````````````
+	To read the content of a file, we must open the file in read mode. There are various methods available for this purpose.
+
+read() method:
+=================
+	It can read the data depends on size of characters read(size). If size parameter is not specified, it reads and returns complete the file.
+
+Syntax:
+
+	fileObject.read([count]);
+	
+readline() method:
+===================
+ 	To read individual lines of a file.
+Syntax:
+	
+	fileObject.readline()
+	
+readlines() method:
+====================
+ 	To read all lines into a list
+syntax:
+	fileObject.readlines()
+
+
+Example: Reading Characters, line,lines...!
+
+try:
+    with open("C:\\Users\\admin\\Desktop\\Python\\MyData.txt",mode = 'r', encoding = 'utf-8') as FO:
+	print(FO.read(5))
+	print(FO.readline())
+	print(FO.readlines())
+	print(FO.readable())
+	print("File read successfully")
+except IOError:
+	print("Sorry File Unable to Read")
+finally:
+	print("The Above Operations Completed")
+
+Example: Reading Number of Characters in a File...!
+
+try:
+    with open("MyFile.txt", mode ='r', encoding = 'utf-8') as FO:
+	AllChar = FO.read()
+	print("Total number of Characters:",len(AllChar))
+	print(FO.readable())
+	print("File Read Successfully")
+except IOError:
+	print("Sorry File Unable to Read")
+finally:
+	print("The Above Operations Completed")
+
+Example: To Display total number of lines
+
+try:
+    with open("MyFile.txt", mode ='r', encoding = 'utf-8') as FO:
+	AllLines = FO.readlines()
+	print("Total number of Characters:",len(AllLines))
+	print(FO.readable())
+	print("File Read Successfully")
+except IOError:
+	print("Sorry File Unable to Read")
+finally:
+	print("The Above Operations Completed")
+
+
+Example: Reading a File with for loop...!
+
+try:
+    with open("MyFile.txt", mode ='r', encoding = 'utf-8') as FO:
+	for line in FO :
+		print(line)
+except IOError:
+	print("Sorry File Unable to Read")
+finally:
+	print("The Above Operations Completed")
+
+
+Appending a File:
+``````````````````````
+	Appending means adding data to inside a file under existing data. Its mode is 'a'.
+Example:
+
+try:
+    with open("MyFile.txt", mode = 'a', encoding = 'utf-8') as FileObj :
+	FileObj.write("I am Appending a file")
+	FileObj.writelines("Thank U")
+	print("File Append successfully")
+except IOError:
+	print("Sorry file not found")
+	print("File unable to create")
+finally:
+	print("Finally Block Success")
+
+Handling Binary Data:
+``````````````````````
+	It is very common requirement to read or write binary data like images, video files, audio files..etc.,
+
+Example:
+	Handling Binary Data in realtime projects, It is the common requirement to read or write binary data like Images, VideoFiles,Audio Files..etc...!
+
+
+Example:
+
+try:
+	MyFile1 = open("django.png",mode = 'rb')
+	MyFile2 = open("dj.png",'wb')
+	Bytes = MyFile1.read()
+	MyFile2.write(Bytes)
+	print("New Img is :dj.png")
+except IOError:
+	print("File Unable to create")
+	print("File unable to Read")
+finally:
+	print("Finally block of statements executed")
+
+
+Working with Zipping & Unzipping Files:
+`````````````````````````````````````````
+	In Python we can do zip and Unzip files. Zip Common features are:
+
+		(1). To Improve memory Utilization.
+		(2). We can reduce transfor time in network
+		(3). We can improve performance of transfer files
+
+Create a Zip File:
+```````````````````
+	We have to create Zipfile class Object with name, of the zip file, mode and constant ZIP_DEFLATED This constant represents we are creating zip file.
+
+Syntax:
+	Obj = ZipFile("ZipFileName",mode,"ZipType")
+
+Example.1:
+````````````
+from zipfile import *
+
+Zfile = ZipFile("MyFile1.zip", 'w', ZIP_DEFLATED)
+Zfile.write("Hotel_Management.py")
+Zfile.write("Python_task.txt")
+Zfile.write("WhatsApp Image 2019-11-15 at 11.04.00 PM (1).jpeg")
+Zfile.close()
+print("Zip File created successfully")
+
+UnZip Operations:
+``````````````````
+	ZIP_STORED represents Unzip Operation. This is default value & hence we are not required to specify. Once we created ZipFile Object for unzip Operation, we can get all file names present in that zip file by using namelist() method.
+
+Syntax:
+	FileObj = ZipFile("MyFiles.zip",'r',ZIP_STORED)
+	names = FileObj.namelist()
+
+Example:
+
+from zipfile import *
+
+Zfile = ZipFile("MyFile.zip", 'r', ZIP_STORED)
+names = Zfile.namelist()
+for name in names:
+    print("File Name : ",name)
+print("File UnZipped Successfully")
+
+
+
+
+
+
+
+
+
+
+
+

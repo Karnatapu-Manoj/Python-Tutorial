@@ -1,0 +1,15 @@
+Book Stall Major project:
+===============================
+
+Create a project For Book Store Which is going to sell Fictional stories,Historical Records,Science Books, College Books, Books for Groups preparations, Books for Kids(below 8 yrs old) Stories,Puzzel Books,Painting Books for Comics,Drawing books, Books for 10th class students,Books for XII Students(BiPC,MPC,MEC,HEC-branches)books For B.tech Graduates like spectrum for each and every branch and has to select the Year. And after selecting the books as per user requirement it should calculate the total cost as per each section.
+Each and every Category of the books sholud print-certain Books names list along with the price,for Each and Every Category there should be separate books name. grasp from online according to the category only the book names according to category alomg with their price tags.
+
+Features:
+=================
+
+At the end of this project, the book stall owner should provide the bill, with the name of the coustomer, coustomer phone number, & the Total Billing for the books which he/she bought the books from that book store.
+
+Note:
+==========
+
+please don't use Google for Solving this project. The Solution will not be provide by the Team, u need to study the CRD Provided in this Document & analyse the requirements and Execute. But the Exceution & the Output should be 100% efficient and Dynamic Way.

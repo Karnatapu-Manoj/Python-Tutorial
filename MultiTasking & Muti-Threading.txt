@@ -1,0 +1,335 @@
+	Multi Tasking & Multi Threading
+ =======================================================
+
+Multi Tasking:
+```````````````
+
+	Executing Several Tasks simultaneously is the concept of multitasking.
+
+There are 2 types of MultiTasking :
+
+  (1). Process based MultiTasking.
+  (2). Thread based MultiTasking.
+
+
+Process based Multi Tasking:
+=============================
+
+	Executing several tasks simultaneously where each task is a seperate independent process is called process based Multitasking.
+
+	We can listen audio songs from the system,at the same time we can download a file from the internet. All these tasks are executing simultaneously and independent of each other. It is best suitable at operating system level.
+
+
+Thread based Multi Tasking:
+============================
+
+	Executing several tasks simultaneously where each task is a seperate, independent part of the same program, is called Thread based Multi tasking, each independent part is called a Thread. This type of Multitasking is best suitable at programmatic level.
+
+Example(1):
+````````````
+import time
+def Cal_Square (numbers):
+    print("Square of numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Square : ",n*n)
+
+def Cal_Cube (numbers):
+    print("Cube of Numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Cube : ",n*n*n)
+        
+arr = [2,3,4,5,6]
+t = time.time()
+Cal_Square(arr)
+Cal_Cube(arr)
+print("Total Time : ",time.time() - t)
+print("Successfully Executed")
+
+Python Threading or MultiThreading:
+`````````````````````````````````````
+	Threading allows multiple tasks run concurrently or independently. It is a separate flow of execution.
+
+		(or)
+
+Threads provide a way to improve application performance through parallelism.
+
+Why Threading ?
+=================
+(1). To Implement Multimedia graphics.
+(2). Parallel Computation.
+(3). Standardaization.
+(4). Parallel I/O (Input/Output)
+(5). Asynchronous Events.
+(6). To develop animations.
+(7). To develop video games.
+(8). To develop web and application servers...!
+
+
+Methods of Thread Class:
+=========================
+run(): It acts as the entry of the Thread.
+start(): It is used for starting the Thread by calling the run().
+isAlive():is used to verify whether the still executing or not.
+getName(): is used for returning the name of a thread.
+setName(): is used to set the name of the Thread.
+
+Example:
+`````````
+import threading.
+print("Current Executing Thread : ",threading.current_thread().getName())
+
+Example:
+`````````
+import time
+import threading
+
+def Cal_Square(numbers):
+    print("Square of numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Square : ", n * n)
+
+
+def Cal_Cube(numbers):
+    print("Cube of Numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Cube : ", n * n * n)
+
+
+arr = [2, 3, 4, 5, 6]
+t = time.time()
+t1 = threading.Thread(target=Cal_Square,args=(arr,))
+t2 = threading.Thread(target=Cal_Cube,args=(arr,))
+
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print("Total Time : ",time.time()-t)
+print("Succesfully Executed")
+
+
+Synchronization and Threading:
+```````````````````````````````
+
+	If multiple Threads are Executing Simultaneously then there may be a chance of data inconsistency problems. Synchronization means at a time only one Thread the main application areas of synchronization are.
+
+	(1). Online Reservation System.
+	(2). Funds transfer from Joint accounts
+	(3). Online Exams
+
+In Python, we can implement synchronization by using the following
+(*) Lock 
+(*) RLock 
+(*) Semaphore
+
+
+Lock():
+=========
+
+Locks are the most fundamental synchronization mechanism provided by threading module.
+
+-The Lock object can be hold by only one thread at a time
+-A Thread can acquire the lock by using acquire() method
+-A Thread can release the lock by using release() method
+
+Example for how do we use the above methods:
+`````````````````````````````````````````````
+from threading import *
+lck = Lock()
+lck.acquire()
+lck.release()
+
+Example:
+```````````
+import time
+import threading
+from threading import *
+
+lc = Lock()
+def Cal_Square(numbers):
+    lc.acquire()
+    print("Square of numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Square : ", n * n)
+    lc.release()
+
+def Cal_Cube(numbers):
+    lc.acquire()
+    print("Cube of Numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Cube : ", n * n * n)
+    lc.release()
+
+
+arr = [2, 3, 4, 5, 6]
+t = time.time()
+t1 = threading.Thread(target=Cal_Square,args=(arr,))
+t2 = threading.Thread(target=Cal_Cube,args=(arr,))
+
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print("Total Time Done in : ",time.time()-t)
+print("Succesfully Executed")
+
+
+RLock():
+=========
+
+	RLock keeps track of recursion level and hence for every acquire() call compulsory release() call should be available.ie., the number of acquire() calls and release() calls should be matched then only lock will be released.
+
+Example:
+``````````
+import time
+import threading
+from threading import *
+
+rc = RLock()
+def Cal_Square(numbers):
+    rc.acquire()
+    print("Square of numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Square : ", n * n)
+    rc.release()
+
+def Cal_Cube(numbers):
+    rc.acquire()
+    print("Cube of Numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Cube : ", n * n * n)
+    rc.release()
+
+
+arr = [2, 3, 4, 5, 6]
+t = time.time()
+t1 = threading.Thread(target=Cal_Square,args=(arr,))
+t2 = threading.Thread(target=Cal_Cube,args=(arr,))
+
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print("Total Time Done in : ",time.time()-t)
+print("Succesfully Executed")
+
+
+Difference B/w Lock & RLock :
+================================
+
+Lock():
+`````````
+(1). Lock object can be acquired by only one thread at a time.
+(2). suitable to execute recursive functions and nested access calls.
+(3). In this case of Lock object will takes care only Locked or unlocked and it never takes care about owner.thread and recurssion level
+
+RLock():
+`````````
+(1). Rlock object can be acquired by only one Thread at a time but owner thread can acquire same look object multiple times.
+(2). Best suitable to execute Recursive functions and nested access calls.
+(3). In this case RLock object will takes care whether Locked or unLocked and ownerthread.
+
+
+
+
+Synchronization by using Semaphore:
+=====================================
+
+	In the case of Lock and RLock, at a time only one thread is allowed to execute.
+Semaphore is advance Synchronization Mechanism.
+
+Syntax:
+````````
+s = Semaphore(counter)
+
+Example:
+`````````
+s = Semaphore(3)
+
+explanation:
+`````````````
+	In this case Semaphore object can be accessed by 3 threads at a time. The remaining threads have to wait until releasing the semaphore.
+Note:
+	Counter represents the maximum number of threads are allowed to access simultaneously. The default value of counter is 1.
+
+
+Example:
+==========
+
+import time
+import threading
+from threading import *
+
+lc = Lock()
+s = Semaphore(2)
+def Cal_Square(numbers):
+    lc.acquire()
+    print("Square of numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Square : ", n * n)
+    lc.release()
+s = Semaphore(2)
+def Cal_Cube(numbers):
+    lc.acquire()
+    print("Cube of Numbers : ")
+    for n in numbers:
+        time.sleep(0.3)
+        print("Cube : ", n * n * n)
+    lc.release()
+
+
+arr = [2, 3, 4, 5, 6]
+t = time.time()
+t1 = threading.Thread(target=Cal_Square,args=(arr,))
+t2 = threading.Thread(target=Cal_Cube,args=(arr,))
+
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+print("Total Time Done in : ",time.time()-t)
+print("Succesfully Executed")
+
+Note:
+======
+	At a time Lock Object can be acquired by only one thread but Semaphore object can be acquired by Fixed number of threads specified by counter value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

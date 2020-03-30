@@ -1,0 +1,140 @@
+					~~~~~~~~~~~  Python 3 Reference Cheat Sheet  ~~~~~~~~~~~
+
+	
+Main Data Types
+=======================
+
+boolean = True / False
+integer = 10
+float = 10.02469
+string = "123abc"
+list = [ value1, value2, ... ]
+dictionary = { key1:value1, key2:value2, ... }
+
+
+Numeric operators
+=======================
+
+	+		addition
+	-		subtraction
+	*		multiplication
+	/		division
+	**		exponent
+	%		modulus
+	//		floor division
+
+Comparison operators
+=======================
+
+	==		equal
+	!=		different
+	>		higher
+	<		lower
+	>=		higher or equal
+	<=		lower or equal
+
+Boolean operators
+=======================
+
+	and		logical AND
+	or		logical OR
+	not		logical NOT
+
+Special Characters
+=======================
+
+	#		comment
+	\n		new line
+	\<char> scape char
+
+String operations
+=======================
+
+string[i]		retrieves character at position i
+string[-1]		retrieves last character
+string[i:j]		retrieves characters in range i to j
+
+List operations
+=======================
+
+list=[] 		defines an empty list
+list[i]=x		stores x with index i
+list[i]			retrieves the item with index i
+list[-1]		retrieves last item
+list[i:j]		retrieves items in the range i to j
+del list[i]		removes the item with index i
+
+Dictionary operations
+=======================
+
+dict={}			defines an empty dictionary
+dict[k]=x		stores x associated to key k
+dict[k]			retrieves the item with key k
+del dict[k]		removes the item with key k
+
+String methods
+=======================
+
+string.upper()		converts to uppercase
+string.lower()		converts to lowercase
+string.count(x)		counts how many times x appears
+string.find(x)		position of the x first occurrence
+string.replace(x,y)	replaces x for y
+string.strip(x)		returns a list of values delimited by x
+string.join(L)		returns a string with L values joined by string
+string.format(x)	returns a string that includes formatted x
+
+List methods
+=======================
+
+list.append(x)		adds x to the end of the list
+list.extend(L)		appends L to the end of the list
+list.insert(i,x)	inserts x at i position
+list.remove(x)		removes the first list item whose value is x
+list.pop(i)			removes the item at position i and returns its value
+list.clear()		removes all items from the list
+list.index(x)		returns a list of values delimited by x
+list.count(x)		returns a string with list values joined by S
+list.sort()			sorts list items
+list.reverse()		reverses list elements
+list.copy()			returns a copy of the list
+
+
+Dictionary methods
+==========================
+
+dict.keys()		returns a list of keys
+dict.values()	returns a list of values
+dict.items()	returns a list of pairs(key,value)
+dict.get(k)		returns the value associated to the key k
+dict.pop()		removes the item associated to the key and returns its value
+dict.update(D)	adds keys-values from the dictionary
+dict.copy()		returns a copy of the dictionary
+
+
+
+	Notes to Remember  :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	'x','y' stand for any kind of data values, 's' for a string, 'n' stands for a number,
+'L' for a list where 'i,j' are list indexes, 'D' stands for a dictionary and 'k' is a dictionary key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,144 @@
+
+		~~~~~~~~~~~~~~~Python Cheat Sheet - 2~~~~~~~~~~~~~~~~
+
+
+Built-in functions 
+================================
+
+print(x,sep='y')		prints x objects separated by y
+input(s)				prints s and waits for an input that will be returned
+len(x)					returns the length of x(s,L or D)
+min(L)					returns the minimum value in L
+max(L)					returns the maximum value in L
+sum(L)					returns the sum of the values in L
+range(n1,n2,n)			returns a sequence of numbers from n1 to n2 in steps of n
+abs(n)					returns the absolute value of n
+round(n1,n)				returns the n1 number rounded to n digits
+type(x)					returns the type of x (string, float, list, dict ...)
+str(x)					converts x to string
+list(x)					converts x to a list
+int(x)					converts x to a integer number
+float(x)				converts x to a float number
+help(s)					prints help about x
+map(function,L)			Applies function to values in L
+
+
+Conditional statements
+================================
+
+
+if <condition>:
+	<code>
+else if<condition>:
+	<code>
+
+...
+else :
+	<code>
+
+if <value> in <list> :
+
+
+Data validation
+================================
+
+
+try:
+	<code>
+except <error>:
+	<code>
+else:
+	<code>
+
+
+Working with files and folders
+==================================
+
+import os
+os.getcwd()
+os.makedirs(<path>)
+os.chdir(<path>)
+os.listdir(<path>)
+
+
+Loops
+================================
+
+while <condition>:
+	<code>
+
+
+for <variable> in<list>:
+	<code>
+
+
+for<variable>in
+range(start,stop,step):
+	<code>
+
+
+for key,value in
+dict.items():
+	<code>
+
+
+Loop control statements 
+================================
+
+
+break			finishes loop execution
+continue		jumps to next iteration
+pass			does nothing
+
+
+Running external programs
+================================
+
+
+import os
+os.system(<command>)
+
+
+Functions
+================================
+
+def function(<params>):
+	<code>
+	return <data>
+
+
+Modules
+================================
+
+import module
+module.function()
+
+from module import *
+function()
+
+
+Reading and writing files
+================================
+
+f = open(<path>,'r')
+f.read(<size>)
+f.readline(<size>)
+f.close()
+
+f=open(<path>,'r')
+for line in f:
+	<code>
+f.close()
+
+f=open(<path>,'w')
+f.write(<str>)
+f.close()
+
+	Notes to Remember  :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	'x','y' stand for any kind of data values, 's' for a string, 'n' stands for a number,
+'L' for a list where 'i,j' are list indexes, 'D' stands for a dictionary and 'k' is a dictionary key.
+
+
+

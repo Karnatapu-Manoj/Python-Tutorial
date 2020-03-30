@@ -1,0 +1,207 @@
+		Python Aditional Topics
+    ==============================================
+
+Python JSON :
+```````````````
+
+JSON stands for JavaScript Object Notation.
+JSON is a lightweight data -interchange format.
+JSON is a "self-describing" and easy to understand
+Json is Language independent.
+
+Why use Json ?
+```````````````
+	Since the Json format is text only, it can easily be sent to and from a server and used as a data format by any programming language.
+
+JSON Syntax Rules :
+````````````````````
+JSON syntax is derived from Java Script object notation synatx.
+ (1). Data is in Name/value pairs.
+ (2). Data is separated by Commas.
+ (3). Curly braces hold objects.
+ (4). Square brackets hold arrays.
+
+JSON uses JavaScript syntax:
+`````````````````````````````
+	Because JSON syntax is derived from JavaScript object notation...!
+In JSON, string values must be written with double quotes:
+	{"name":"Rishi Kumar"}
+
+JSON File:
+```````````
+   The file type for JSON files is " .json ".
+
+Json Example:
+``````````````
+{"employees" : [
+	{"firstName":"John","LastName":"Dov"},
+	{"firstName":"Anna","LastName":"Smith"},
+	{"firstName":"Peter","LastName":"Jones"},
+]}
+
+
+Xml Example:
+`````````````
+<employees>
+   <employee>
+	<firstName>John</firstName><lastName>Dov</lastName>
+   </employee>
+   <employee>
+	<firstName>Anna</firstName><lastName>Smith</lastName>
+   </employee>
+   <employee>
+	<firstName>Peter</firstName><lastName>Jones</lastName>
+   </employee>
+</employees>
+
+JSON is Unlike XML Because:
+============================
+
+(1). JSON doesn't use end tag
+(2). JSON is shoter
+(3). JSON is quicker to read and write
+(4). JSON can use arrays.
+(5). using json makes very easy when compared to XML.
+
+How to install Json Using PIP Commands:
+`````````````````````````````````````````
+
+$pip install simplejson
+$pip show simplejson
+
+In Python IDLE:
+>>> import json
+>>> print(dir(json))
+
+>>> import simplejson
+>>> print(dir(simplejson))
+
+Example:
+`````````
+(Integrating python with JSON)
+
+book={}
+book['Spidy'] = {'name':'Spidy','address':'NewJerssy','Phone':9988556767}
+book['Tony'] = {'name':'Tony','address':'Avengers Club','Phone':9182736452}
+import json
+s=json.dumps(book)
+print(s)
+
+
+
+Python Django FrameWork :
+============================
+Framework:
+````````````
+	A FrameWork, is a platform for developing software applications.
+
+Web FrameWork/Web Application FrameWork (WF/WAF):
+```````````````````````````````````````````````````
+	It is a software framework that is designed to support the development of web applications.
+
+Django:
+=========
+	It is a high-level Python web MVT FrameWork.
+
+History of Django:
+```````````````````
+2003- started by Adrian Holovaty & Simon Willison as an internal project  for artical in 2005. Released July 2005 & named it django, after the Jazz guitarist Django Reinhardt.
+
+Features of Django:(http://www.djangoproject.com)
+====================
+(1). Rediculously fast
+(2). Fully loaded
+(3). Reassuringly secure
+(4). Exceedingly scalable
+(5). Incredibly versatile
+
+In Python Popular Web FrameWorks are:
+```````````````````````````````````````
+-Django		-Flas		-Pyramid
+-Falcon		-Bottle
+
+step1: Installing Python
+step2: Installing Django
+$ pip install django == 2.2.5 (specify the current version)
+
+Checking Django installed :
+`````````````````````````````
+>>> import django
+>>> print(django.VERSION)
+
+$ pip show django
+
+Getting started with Django :
+``````````````````````````````
+(1). Create a new django project
+
+$ django-admin startproject Firstproject (firstproject is project name as per your naming requirement)
+
+Example:
+`````````
+$ djnago-admin startproject newpro
+$ cd newpro
+$ dir(Windows) (or) $ ls(unix/linux)
+
+Analysing:
+
+__init__.py :
+	
+	These files are required to make Python treat as packages.
+
+settings.py :
+	
+	It is the central configuration for all Django projects.
+
+urls.py :
+	
+	In urls.py, the most important thing is the "urlpatterns" tuple. it's where you define the mapping between URL's and Views.
+
+Wsgi.py :
+
+	Web Server Gateway Interface is a simple calling convention for web servers to forward requests to web applications.
+
+manage.py :
+
+	It does the same thing as django-admin but takes care of a few things for you.
+
+
+How To Run Django Project :
+=============================
+
+In Cmd(Windows) or terminal(Unix/Linux):
+`````````````````````````````````````````
+
+If u have created the django project follow the below steps.
+
+$ cd newpro
+$ django-admin startapp myapp
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver 
+
+-----------------------------------------------------------------------------------------------------
+
+If u didn't create any project yet follow the below steps.
+
+$ django-admin startproject Test
+$ cd Test
+$ django-admin startapp myapp
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py runserver
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

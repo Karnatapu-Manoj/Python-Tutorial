@@ -1,0 +1,295 @@
+Python Iterators:
+=================
+
+	Iterators is an Object which implements the iterator protocol, which consists of the methods __iter__() & __next__() .
+They are implemented within for loop, comprehensions,generators etc... Python lists, tuple, dicts and sets are all examples of inbuilt iterators.
+
+Example. (Ordinary example):
+============================
+
+PyData = [1,2,3,4,5,6]
+for data in PyData:
+    print(data)
+
+Example. (using Iterators concept):
+====================================
+
+
+PyData = [1,2,3,4,5,6]
+
+Iter = iter(PyData)   	# iter() is a function & Iter is just a Variable.
+
+print(next(Iter))  # 1
+
+print(next(Iter))  # 2
+
+print(next(Iter))  # 3
+
+print(next(Iter))  # 4
+...
+
+Analysis:
+``````````
+
+__iter__() :
+
+	It is called on initialization of an iterator. This should return an object that has a next/__next__() .
+
+__next__() :
+
+	The  iterator next method Should return the next value for the iterable. This method should raise a stopIteration to signal the end of the iteration.
+
+
+Example:
+=========
+
+PyData = [1,2,3]
+
+Iter = iter(PyData)   	# iter() is a function & Iter is just a Variable.
+
+print(next(Iter))  # 1
+
+print(next(Iter))  # 2
+
+print(next(Iter))  # 3
+
+print(next(Iter))  # StopIteration Error
+
+
+Types of Implementation :
+=========================
+
+next(Iter) --> user defined method explicit method.
+
+Iter.__next__() ---> This is implicit method (or) magical method 
+		     i.e., the machine usage or machine defined method.
+
+Example:
+``````````
+
+PyData = [1,2,3,4,5,6]
+
+Iter = iter(PyData) 
+
+print(Iter.__next__())  # 1
+
+print(Iter.__next__())  # 2
+
+print(Iter.__next__())  # 3
+
+print(Iter.__next__())  # 4
+
+print(Iter.__next__())  # 5
+
+print(Iter.__next__())  # 6
+
+print(Iter.__next__())  # StopIteration Error
+
+
+Python Generators :
+===================
+
+	A Generator - function is defined like a normal function, but whenever it needs to generate a value it does so with the yield keyword rather than return. if the body of a def contains yield, the function automatically becomes a generator function. Python generators are a simple way of creating iterators.
+
+
+Differences B/w Generators function and a Normal Function :
+````````````````````````````````````````````````````````````
+
+(1). Generator Function contains one or more yield statements.
+(2). Compared with class level iterators, generators are very easy to use.
+(3). Improves memory utilization and perofrmance
+(4). Generators are best suitable for reading data from large no.of large files.
+(5). Generatos work great for web scraping and crawling.(web scraping,web crawling,web Bots, Internet Bots)
+
+
+Generator - Object :
+====================
+
+	Generator functions return a generator object. Generator objects are used either by calling the next method on the generator object or using the generator object in a 'for in' loop.
+
+
+Example:  [ Generating Generator object ]
+============================================
+
+def Hello_Fun():
+    yield 1
+    yield 2
+    yield 3
+MyIter = Hello_Fun()
+print(MyIter)  # <generator object Hello_Fun at 0x7f5eb3b5fe58>
+
+Example: [ Generator as Iterator ]
+==================================
+
+def Hello_Fun():
+    yield 1
+    yield 2
+    yield 3
+MyIter = Helo_Fun()
+print(next(MyIter)) # 1
+print(next(MyIter)) # 2
+print(next(MyIter)) # 3
+
+Example: [ Generator using for loop ]
+=====================================
+
+def Hello_Fun():
+    yield 1
+    yield 2
+    yield 3
+
+for data in Hello_Fun():
+    print(data)
+
+Example: [ Generators using for-loop & Data Structures ]
+=========================================================
+
+def Hello_Fun():
+    yield "Hello","Good morning"
+    yield [1,2,3,4,5,6,7]
+    yield (1,2,3,4,5,6,7)
+    yield {1,2,3,4,5,6,7}
+
+for data in Hello_Fun():
+    print(data)
+
+Why generators means ...!
+```````````````````````````
+(1). Easy to Implement
+(2).Memory Efficient
+(3).Represent Infinite Stream
+(4).Pipelining Generators.
+
+
+
+Python Decorators:
+===================
+
+	Decorators is a function that takes another function and extends the behaviour of the latter function without explicitly modifying it. There are some built0in decorators:
+	@classmethod
+	@staticmethod
+	@property
+
+A decorator is a callable that returns a callable. A Decorator takes in a function, adds some functionality and returns it. Decorators help to make our code shorter and more Pythonic Way...
+
+Example: [ Without using Decorator ]
+====================================
+
+def Div(x,y):
+    return x/y
+
+print(Div(2/1)) # 2.0
+print(Div(2/2)) # 1.0
+print(Div(0/2)) # 0.0
+print(Div(2/0)) # ZeroDivisionError
+
+Example: [ With using Decorator ]
+=================================
+
+def Div_Update(func):
+    def Inner(x,y):
+        if y == 0:
+   	    print("Sorry Unable to Compute")
+	else:
+	    return func(x,y)
+    return Inner
+
+@Div_Update  	# decorator annotation..
+def Div(x,y):
+    return x/y
+
+print(Div(2/1)) # 2.0
+print(Div(2/2)) # 1.0
+print(Div(0/2)) # 0.0
+print(Div(2/0)) # Sorry Unable to Compute # None
+
+Example 2:
+===========
+def smart_divide(func):
+   def inner(a,b):
+      print("I am going to divide",a,"and",b)
+      if b == 0:
+         print("Whoops! cannot divide")
+         return
+
+      return func(a,b)
+   return inner
+
+@smart_divide
+def divide(a,b):
+    return a/b
+divide(6,2)
+divide(1,2)
+divide(0,2)
+divide(2,0)
+
+Python Closures :
+==================
+
+	A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory.
+
+
+Example:
+========
+
+def print_msg(msg):
+    # This is the outer enclosing function
+
+    def printer():
+        # This is the nested function
+        print(msg)
+
+    return printer  # this got changed
+
+# Now let's try calling this function.
+# Output: Hello
+another = print_msg("Hello")
+another()
+
+When do we have a closure?
+===========================
+
+As seen from the above example, we have a closure in Python when a nested function references a value in its enclosing scope.
+The criteria that must be met to create closure in Python are summarized in the following points.
+
+-We must have a nested function (function inside a function).
+-The nested function must refer to a value defined in the enclosing function.
+-The enclosing function must return the nested function.
+	   
+When to use closures?
+======================
+
+(1). Closures can avoid the use of global values and provides some form of data hiding. It can also provide an object oriented solution to the problem.
+
+(2). When there are few methods (one method in most cases) to be implemented in a class, closures can provide an alternate and more elegant solutions. But when the number of attributes and methods get larger, better implement a class.
+
+(3). Here is a simple example where a closure might be more preferable than defining a class and making objects. But the preference is all yours.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
