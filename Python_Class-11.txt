@@ -1,0 +1,410 @@
+
+
+
+Python OOP's Level Encapsulation:
+`````````````````````````````````
+
+What is Encapsulation:(Data Binding/Grouping)
+```````````````````````````````````````````````
+
+We Can restrict the access to the variables and methods is called as Encapsulation.
+
+(or)
+
+The concept of binding/grouping related data members along with its related functionalities..
+
+(or)
+
+It can prevent the data from being modified by accidently.
+
+Private Methods in Python:
+```````````````````````````
+
+(1). When the attributes of an object can only be accessed inside the class, it is called private.
+(2). Python use two underscores to hide a Method
+(3). Two Underscores can also be used to hide a Variable.
+(4). We can not access private methods outside the class
+
+Example:
+`````````
+
+class Banking():
+	def __init__(self):
+		self.__Hello = "Wishing"
+BB = Banking()
+print(BB.__Hello)
+#Attribute Error: 'Banking' Object has no attribute'__Hello'
+
+Note:
+`````	But we can access private methods & private attributes using one underscore with class Name
+(Protected class Name)
+
+example:
+````````
+
+class Banking():
+	def __init__(self):
+		self.__Hello = "Wishing"
+BB = Banking()
+print(BB._Banking__Hello)
+
+Example:
+class Car():
+	#Constructor
+	def __init__(self):
+		#instance Methods
+		self.__softwareUpdate()
+	def DisplayDetails(self):
+		print("Hey i can drive with out errors")
+		print("Thank Q")
+	#private Method
+	def __SoftwareUpadate(self):
+		print("Car software Update successfully")
+		print("U can drive Safely")
+
+#creating Instance #driver Code
+cc = Car()
+#Calling Method Resources/Calling Class Members
+cc.Display Details()
+
+O/P:
+	Car software Update Successfully
+	U can drive Safely
+	Hey i can drive with out errors
+	Thank Q
+
+Private Variables in Python:
+````````````````````````````
+Private Variables can be modified inside the class methods. We can not modify private variables out side the class.
+
+Example:
+`````````
+
+Class Car():
+	#Private Global Attributes
+	# Private variables
+	__name = " "
+	__maxspeed = 0
+	def __init__(self):
+		#Instance Private Attributes
+		self.__maxspeed = 300
+		self.__name = "Sports car"
+		print("Say Hay I am a Constructor")
+	def car_Details(self):
+		print("Car Name is : ",self.__name)
+		print("Car Speed is : ",self.__maxspeed)
+		#Reset Car Speed
+	def Speed(self,speed):
+		self.__maxspeed = speed
+		print("Car current speed is:",self.__maxspeed)
+#creating Instance or Object
+cc = Car()
+CC.CarDetails()
+cc.speed(100)
+#access private Attributes using Protected class
+print(cc._car__maxspeed) # 100
+print(cc._car__name)#sports car
+
+
+Polymorphism: (Many Forms or Shapes)
+`````````````````````````````````````
+
+It is an ability of an object to adopt the code to the type of the data processing.
+(or)
+It defines an action regardless of type of an Object.
+
+Points to Remember:
+===================
+(1). Ploy means many and morphism means forms 
+(2). Forms means functionalities or logics
+(3). The concept of defining multiple logics to perform same operation is known as a polymorphism
+(4). Ploymorphism can be implemented in Python by using method overriding
+(5). Python is implicitly polymorphic
+
+Example:
+`````````
+A = 5 ; B = 6
+print(A+B)
+A = "Hello"
+B = "Pythonista"
+print(A+B)
+
+Polymorphism different forms
+(1). Overriding
+	(i).  Method Overriding
+	(ii). Constructor Overriding
+
+(2). Overloading
+	(i).  Method Overloading
+	(ii). Constructor Overloading
+	(iii).Operator Overloading
+
+
+Dynamic/Run Time Polymorphism : Method overriding
+```````````````````````````````````````````````````
+	Through method overriding a class may "copy" another class, avoiding duplicated code, and at the same time enhance or customize part of it.
+(or)
+It is the ability of a class to change the implementation of method provided by one of its ancestors.
+
+Example:
+`````````
+
+
+class A():
+    def Mymethod(self):
+        print("Hey class A")
+    
+class B(A):
+    def Mymethod(self):
+        print("hey class B")
+    
+BB = B()
+BB.Mymethod()
+
+Constructor Overriding:
+````````````````````````
+class Parent_constructor():
+    def __init__(self):
+	print("Welcome to main Constructor is Parent_Constructor")
+class Child_constructor(Parent_constructor):
+    def __init__(self):
+	print("Good Bye from SubConst. is Child_constructor")
+
+helloconst = Child_constructor()
+
+note:
+	If child class does not contain constructor then parent class constructor will be executed.
+
+example:
+`````````
+class Parent_constructor():
+    def __init__(self):
+	print("Welcome to main Constructor is Parent_Constructor")
+class Child_constructor(Parent_constructor):
+    pass
+
+helloconst = Child_constructor()
+
+
+Static Polymorphism :
+`````````````````````
+Method and constructor Overloading-- Python doesn't support Method Overloading & constructor Overloading, it is dynamically typed language. If we are trying to declare Multiple Methods with same name and different number of arguments then Python will always consider only last method.
+
+Example:
+````````
+class Cal_Comput():
+    def Add_Method(self,a,b):
+	return(a+b)
+
+    def Add_Method(self,a,b,c):
+	return(a+b-c)
+
+    def Add_Method(self,a,b,c,d):
+	return(a+b-c+d)
+
+CC = Cal_Comput()
+cc.Add_method(1,2) #
+cc.Add_method(1,2,3)
+cc.Add_method(1,2,3,4)
+
+TypeError:
+``````````     Add_Method() missing 2, required positional arguments: 'c' and 'd'
+
+
+Constructor Overloading:
+````````````````````````
+	Constructor overloading is not possible in python. If we Define multiple constructors then the last constructor will be considered.
+
+Example:
+`````````
+
+class Constructor1():
+	def __init__(self):
+		print("Welcome to Python class")
+class Constructor2():
+	def __init__(self):
+		print("Bye")
+
+hellocons = Constructor2()
+O/p: Successfully executed # Bye
+
+Python Operator Overloading:
+`````````````````````````````
+	Assigining extra work to operators is called operators overloading.
+(or)
+The assignment of more than one function to a particular operator.
+
+Example:
+`````````
+print(10+20) #30
+print(10*2) #20
+
+Example:
+````````
+class Subject():
+	def __init__(self,Course):
+	     self.Course = Course
+sub1 = Subject("BigData")
+sub2 = Subject("Data Science")
+print(Sub1 + sub2)
+O/p:
+Type Error:
+Unsupported operand type(s) for +:'subject' & 'subject'
+
+Points to Remember:
+````````````````````
+(1). In Python every operator Magic Methods are available
+(2). To Overload any operator we have to override that Method in our class
+(3). Internally + operator is implemented by using add() method
+(4). This method is called magic method for + operator.
+
+Operator Overloading special Function in Python:
+
+Operator		Function		internally
+
+Addition		p1 + p2			p1.__add__(p2)
+Subtraction		p1 - p2			p1.__sub__(p2)
+Multiplication	p1 * p2			p1.__mul__(p2)
+Power			p1 ** p2		p1.__pow__(p2)
+Division		p1 / p2			p1.__truediv__(p2)
+Floor div		p1//p2			p1.__floordiv__(p2)
+Modulus			p1 % p2			p1.__mod__(p2)
+
+Class Subject():
+    def __init__(self,course):
+		self.course = course
+    def __add__(self,other):
+	return self.course+","+other.course
+
+sub1 = Subject("Big Data")
+sub2 = Subject("Data Science")
+print(sub1 + sub2)
+
+
+
+Python Abstraction (or) Data Hiding:
+`````````````````````````````````````
+
+	Abstraction is used to hide internal details & show only functionalities.
+Example:
+````````
+Great Apes(class): It is abstract class. We can not have direct Object. It could be Humans, Chimpanzes,apes,Gorilla etc..
+
+Primates(class): It is abstract class. We can not have direct Object. It could be Chimpanzee, Ape, Gorilla, Simian, Humans etc..
+
+Example:
+`````````
+
+class Animal():
+    def move(self):
+        pass
+class Humans(Animal):
+    def move(self):
+        print("I can walk n run")
+class Dog(Animal):
+    def move(self):
+        print("I can bark")
+class Lion(Animal):
+    def move(self):
+        print("I can Roar")
+        
+R = Humans()
+R.move()
+r = Dog()
+r.move()
+l = Lion()
+l.move()
+
+Abstract Class Instantiation:
+`````````````````````````````
+	Abstract classes are incomplete because they have methods which have no body. If Python allows creating an Object for abstract classes then using that Object If anyone calls the abstract method, but there is no actual implementation to invoke.
+
+
+Example:
+`````````
+
+from abc import ABC
+class Animal(ABC):
+    def move(self):
+        pass
+class Humans(Animal):
+    def move(self):
+        print("I can walk n run")
+class Dog(Animal):
+    def move(self):
+        print("I can bark")
+class Lion(Animal):
+    def move(self):
+        print("I can Roar")
+        
+R = Humans()
+R.move()
+r = Dog()
+r.move()
+l = Lion()
+l.move()
+
+Abstract Method:
+````````````````
+abc: stands for Abstract Base Classes. This module provides the infrastructure for defining abstract base classes. ABC is a class, abstract method is decorator. A decorator indicating Abstract Methods.
+
+Example:
+````````
+
+from abc import ABC
+class Animal(ABC):
+    @abstractmethod
+    def move(self):
+        pass
+class Humans(Animal):
+    def move(self):
+        print("I can walk n run")
+class Dog(Animal):
+    def move(self):
+        print("I can bark")
+class Lion(Animal):
+    def move(self):
+        print("I can Roar")
+        
+R = Humans()
+R.move()
+d = Dog()
+d.move()
+l = Lion()
+l.move()
+
+O/p:
+TypeError: Can't instantiate abstract class Animal with abstract methods move.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

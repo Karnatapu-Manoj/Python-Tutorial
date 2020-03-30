@@ -1,0 +1,409 @@
+		
+
+
+Python Set Data Structure :
+````````````````````````````
+	SET is an unordered collection of unique elements.
+
+How to create a set ?
+
+(1). Insertion order is not preserved. But we can sort the elements.
+(2). Indexing and slicing not allowed for the set.
+(3). Heterogeneous elemts are allowed.
+(4). We can represent set elements within curly braces and with comma separation.
+(5). We can apply mathematical operations like union, intersection, difference etc.
+
+
+There are currentlly two built-in set types:
+   (1). SET -----> the set type is mutable (RW)
+   (2). frozenset ---> it is immutable and hashable (RO)
+
+Key notes: 
+
+   --------> set contains values are keys, (no duplicates)
+   --------> set supports iteration.
+Example:
+	set = {1,2,3,4,5}
+	for data in set:
+		print(data)
+
+
+Python Set Methods :
+````````````````````
+(1). add()
+(2). clear()
+(3). Copy()
+(4). difference()
+(5). difference_update()
+(6). discard()
+(7). intersection()
+(8). intersection_update()
+(9). isdisjoint()
+(10).issubset()
+(11).issuperset()
+(12).pop()
+(13).remove()
+(14).symmetric_difference()
+(15).symmetric_difference_update()
+(16).union()
+(17).update()
+
+
+
+
+
+Python Frozen-Set:
+```````````````````
+
+	It is a new class that has the characteristics of a set, but its elements cannot be changed once assigned. While tuples are immutable lists, frozensets are immutable sets. Frozensets can be created using the function frozenset()
+
+Syntax:
+	PyFset=frozenset(iterable)
+Example:
+	PyFSet= frozenset([1,2,3,4])
+	print(type(PyFSet))
+	print(PyFSet)
+
+
+Frozen Set Supports the following list of methods:
+``````````````````````````````````````````````````
+
+	. copy
+	. issubset
+	. difference
+	. issuperset
+	. intersection
+	. symmetric_difference
+	. isdisjoint
+	. union
+
+Examples:
+``````````
+
+# Frozen-Set all methods Example:
+
+
+
+PyFset1 = frozenset([1,2,3,4]) 
+PyFset2 = frozenset({10,20,30}) 
+print(PyFset1.copy())
+print(PyFset1.difference(PyFset2)) 
+print(PyFset1.intersection(PyFset2))
+print(PyFset2.isdisjoint(PyFset2))
+print(PyFset2.issubset(PyFset1))
+print(PyFset2.issuperset(PyFset1))
+print(PyFset1.symmetric_difference(PyFset2))
+print(PyFset1.union(PyFset2))
+
+
+
+
+Python Dictionary Data Structure :
+```````````````````````````````````
+
+	A Dictionary is a sequence of items. Each item is a pair made of a key and a value. Dictionaries are not sorted.
+
+Why Dictionary ?
+
+	(1). Dictionaries are Python's most powerful data collection.
+	(2). Dictionaries allow us to do fast data base-like operations in Python.
+	(3). Associative Arrays - PERL/PHP, Hash map - Java, Property Bag - C#/.Net
+
+How to create  DICTIONARY :
+````````````````````````````
+
+	Creating a dictionary is as simple as placing items inside curly braces {} separated by comma. An item has a key & the corresponding value expression as a pair,key : value .
+
+Diff b/w primary key & key :
+	Primary key is a key of " not null + Unique "
+
+Example:
+
+	PyDict = {}
+	print(type(PyDict)) # <class 'dict'>
+	print(PyDict) # {}
+
+  Creating dictionary with Integer Keys :
+ ```````````````````````````````````````````
+PyDict = {1:"ONE", 2:"Two",3:"Three"}
+print(type(PyDict))
+print(PyDict)
+
+  Creating dictionary with String Keys :
+ `````````````````````````````````````````
+PyDict = {"ONE":1, "TWO":2,"THREE":3}
+print(type(PyDict))
+print(PyDict)
+
+  Creating dictionary with Float Keys :
+ `````````````````````````````````````````
+PyDict = {1.8:"ONE", 2.0:"Two",3.1:"Three"}
+print(type(PyDict))
+print(PyDict)
+
+
+  Creating dictionary with Mixed Keys :
+ `````````````````````````````````````````
+
+PyDict = {"ONE":1, 2.0:"Two",3:"Three"}
+print(type(PyDict))
+print(PyDict)
+
+
+Adding new key to a Dictionary :
+
+a = {1:"PYTHON", 2:"Ds",3:"ML"}
+print(type(a)) ; print(a)
+a[4] = "DL"
+a[5] = "AI"
+print(a)
+a[3] = "Machine Learning"
+print(a)
+
+
+Comparing List & Dictionary :
+``````````````````````````````
+
+dictionary are like lists except that they use keys instead of numbers to look up values.
+
+	List----------> always indexed based.
+	
+	Dictionary----> always key based.
+
+
+    a = [71,72,68,76] 				a = {1:71,2:68,3:76,4:72}
+
+
+	0 --- 71				2 ----- 68
+	1 --- 72				1 ----- 71
+	2 --- 68				3 ----- 76
+	3 --- 76				4 ----- 72
+
+
+
+     List structure		             Dictionary Structure
+
+
+
+ List level adding values :
+
+	a = []
+	print(type(a))
+	print(a)
+	a.append(1)
+	a.append(2)
+	print(a) # [1,2]
+
+ Index 		Value
+   
+   0 		  1
+
+   1   		  2
+
+
+Dictionary level adding values :
+	
+	Dict = {}
+	print(type(Dict))
+	print(Dict)
+	Dict[1] = "PYTHON"
+	Dict[3] = "AI"
+	Dict[2] = "DL"
+	
+	print(Dict) {1:"Python",2:""Dl,3:"Ai"}
+
+Python Dictionary Methods :
+===========================
+
+	clear()		copy()		fromkeys(seq[,v])
+	get(Key[,d])	items()		keys()
+	pop(key[,d])	popitem()	update([other])
+	values()
+
+(1). Clear()
+
+	IT is used to clear all keys and values from a dictionary.
+   Syntax :
+	dict.clear()
+   
+   Example:
+
+	a = {1:"ONE", 2:"TWO", 3:"THREE"}
+	print(a) ; print(type)
+	a.clear()
+	print(a) # {}
+
+
+(2). copy()
+
+	It is used to create duplicate dictionary or shallow dictionary.
+
+   Syntax :
+	dict.copy()
+    Example:
+
+	a = {1:"ONE", 2:"TWO", 3:"THREE"}
+	print(a) ; print(type)
+	b = a.copy()
+	print(a) ; print(b)
+
+(3). fromkeys()
+
+	It creates a new dictionary from the given sequence of elements with a value provided by the user.
+
+  Syntax:
+	dict.fromkeys(sequence [,value])
+
+	Parameters:
+		sequence - sequence of elemts which is to be used as keys for the new dictionary 
+		
+		value(optiona) - value which is set to each element of the dictionary.
+  Example:
+
+	keys = {'a','e','i','o','u'}
+	print(type(keys)) # <class 'set'>
+	vowels = dict.fromkeys(keys)
+	print(vowels)
+			# {'i': None,'a': None, 'e': None, 'o': None,'u': None}
+	value = 'MHN'
+	vowels = dict.fromkeys(keys, value)
+	print(vowels)
+			# {'i': MHN,'a': MHN, 'e': MHN, 'o': MHN,'u': MHN}
+
+
+(4). get()
+
+	It returns the value for specified key if key is in dictionary.
+
+   Syntax:
+	dict.get(key[,value])
+   Parameters:
+	key - key to be searched in the dictionary
+
+	value(optional) - value to be returned if the key is not found. the default value is None.
+
+
+   Example:
+	
+	a = {1:"PYTHON", 2:"BigData", 3:"ML", 4:"Ds", 5:"DL"}
+	print(a.get(2)) # Big Data
+	print(a.get(6)) # None
+
+(5). items()
+
+	It returns a view object that dislays a list of dictionary's (Key, value) tuple pairs.
+
+  Syntax:
+	dictionary.items()
+  Example:
+	a = {1:"PYTHON", 2:"BigData", 3:"ML", 4:"Ds", 5:"DL"}
+	print(a.items())
+
+(6). update()
+
+	It updates the dictionary with the elements from the another dictionary object or from an iterable of key/value pairs.
+  
+   Syntax :
+	dict.update([other])
+
+    Example:
+	
+	a = {1:"ONE", 2:"TWO", 3:"THREE"}
+	print(a) ; print(type)
+	b = {2:"Too", 3:"Tree"}
+	a.update(b)
+	print(a)
+
+(7). Keys()
+
+	It returns a view object that displays a list of all the keys in the dictionary.
+
+   Syntax:
+	dict.keys()
+
+
+(8). values()
+
+	The values() method returns a view object that displays a list of all the values in the dictionary
+
+  Syntax:
+	dict.values()
+
+
+Example:
+
+	a = {1:"ONE", 2:"TWO", 3:"THREE"}
+	print(a.keys())
+	print(a.values())
+
+(9). pop()
+
+	It removes and returns an element from a dictionary having the given key.
+
+   Syntax:
+	dict.pop(key)
+   Parameters:
+
+	key - key which is to be searched for removal.
+
+    Example:
+
+	a = {'d':"ML",'e':"DL",'f':"AI"}
+	print(a.pop(e))
+	print(a)
+
+(10). popitems()
+	
+	It returns and removes an arbitrary element (key,value) pair from the dictionary.
+
+  Syntax:
+	dict.popitems()
+
+  Example:
+
+	a = {'d':"ML",'e':"DL",'f':"AI"}
+	a = a.popitem())
+	print(a)
+
+Built-in Functions with Dictionary :
+```````````````````````````````````````
+
+all() - Return true if all keys of the dictionary are true(or if the dictionary is empty)
+
+any() - Returns True if any key of the dict is True If the dictionary is empty, return False
+
+len() - Return the length (the number of items) in the dictionary.
+
+sorted() - Return a new sorted list of keys in the dictionary.
+
+	
+How to merge two dictionaries :
+````````````````````````````````
+
+	x = {'a':1,'b':2}
+ 	y = {'c':3,'b':4}
+	z = {**x,**y}
+	print(z)
+
+
+Dictionary Comprehension :
+```````````````````````````
+
+	Comprehensions concept applicable for dictionaries also.
+
+Example:
+
+	squares = {x:x*x for x in range(1,6)}
+	
+	print(squares)
+
+	doubles = {x:2*x for x in range(1,6)}
+	
+	print(doubles)
+
+
+
+
+
+
+

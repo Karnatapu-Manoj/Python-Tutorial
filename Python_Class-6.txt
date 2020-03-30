@@ -1,0 +1,429 @@
+		
+
+
+Python Data Structures :
+`````````````````````````
+
+
+	- A Data Structure is a Specialized format for Organizing and Storing data.
+	- A Data Structure is classified into Two Categories :
+
+		==> Linear Data Structure
+		==> Non-Linear Data Structure
+
+Linear Data Structures :
+`````````````````````````
+
+	A Data Structure which is sequential and continues in nature.
+  Example : array, Linked list, Stack and queue.
+
+Non-Linear Data Structures :
+`````````````````````````````
+
+	These are arranged in random manner. It can be used to hierarchical relationship among data.
+  Example : Tree, Hash tree, Binary Tree, Heap & graph.
+
+
+Data Structures in Python :
+````````````````````````````
+
+	In Python built-in data Structures are:
+ (1). List ( Lists are enclosed in brackets [] )
+ (2). Tuple ( Tuples are enclosed in parentheses () )
+ (3). Set  ( Sets are enclosed in curly-brackets { , } )
+ (4). Dictionary ( Dictionaries are enclosed in curly-brackets as { Keys : Values } )
+
+
+
+For Data Structures in Python :
+````````````````````````````````
+	Hashable is =====> Immutable - Unchangable ( Read only )
+	UnHashable is ===> Mutable - Changable ( Read & Write )
+
+  List is UnHashable ---------->  Mutable ( Read & Write )
+  Tuple is Hashable  ---------->  Immutable ( Read only )
+  Set is UnHashable  ---------->  Mutable ( Read & Write )
+  Dictionary:
+  ````````````
+	Keys -----------> Hashable/ Immutable ( Read only )
+ 	Values ---------> UnHashable/ Mutable ( Read & Write )
+
+
+
+Strings ==>  Hashable/ Immutable ( Read only ) :
+=================================================
+
+	In general, you can't perform mathematical operations on strings, even if the strings look like numbers. The + Operator performs String Concatenation, Which means it joins the strings by linking them end-to-end.
+
+	example:
+		a= "Hello" ; b = "World...!"
+		Full_Str = a+ " " +b
+		print(Full_Str)
+		print('Full_Str' * 3)
+
+		#Assigning & Re-Assigning:
+		print(a)
+		a[2] = e    #error
+		a = " Heelo "
+
+
+Note:
+`````	We can Change total string, but part of the string update is not possible, because strings are immutable.
+
+String Slicing :
+````````````````
+
+	To Cut a substring from a string is called String slicing. Here two indices are used separated by a colon (:). A Slice 3:7 means indices Characters of 3,4,5&6 positions.The Second integer index i.e, 7 is not included. You Can use negative indices for slicing.[ str[3:7]  ]
+
+	Left-To-Right Indexing ( Positive index ) :
+      ````````````````````````````````````````````````
+
+		P  Y  T  H  O  N
+		0  1  2  3  4  5
+
+	Right-To-Left Indexing ( Negative index ) :
+      ````````````````````````````````````````````````
+
+		 P   Y   T   H   O   N
+		-6  -5  -4  -3  -2  -1
+
+
+
+String Built in Methods :
+``````````````````````````
+
+	str.capitalize()
+	str.title()
+	str.isdigit()
+	str.islower()
+	len(str)
+	max(str)
+	min(str)
+	str.isalnum()
+	str.rjust(length,fillchar)
+	str.ljust(length,fillchar)
+	str.center(length,fillchar)
+	str.replace(old, new [,count])
+
+Join Method in strings:
+```````````````````````
+	It is a string method and returns a string in which the element of sequence have been joined by str separator.
+
+syntax:
+	str.join(iterable)
+
+
+
+
+	Example:
+		Pystr = " **** "
+		seq = ("98")
+		print(Pystr.join(seq)) # 9***8
+
+Python Working with List Data structures:
+``````````````````````````````````````````
+
+	A List is a Container which holds comma-separated values(items or elements) b/w square brackets[] where items or elements need not all have the same type. It can have any number of items & they may be of different types (integers,float,string,..etc)
+
+List has the Following Characteristics:
+
+(1). Mutable
+(2). Linear Data Structure
+(3). Mixed Type Elements
+(4). Variable Length
+(5). Zero Based Indexing.
+
+Note: Traditional arrays can not be created in Python
+
+Types of List's:
+
+Empty List:
+
+	A list without any element is called an empty list
+Eg.
+	PyList = []
+	print(PyList)
+	print(type(PyList)) # <class 'list'>
+
+Number List:
+
+	A List with only numbers is called an integer list
+Eg.
+	PyList = [1,2,3,4,5]
+	print(PyList)
+	print(type(PyList)) # <class 'list'>
+
+Float List:
+
+	A List with only decimal numbers is called float list
+Eg.
+	PyList = [1.1, 2.78, 4.75, 5.05]
+	print(PyList)
+	print(type(PyList)) # <class 'list'>
+
+
+String List:
+
+	A List with only Strings & chars is called a String List.
+
+Eg.
+	PyList = ["Machine Learning", "Python", "AI", "IOT"]
+	print(PyList)
+	print(type(PyList)) # <class 'list'>
+
+
+Mixed List:
+
+	A List with different data types is called Mixed List
+Eg.
+	PyList = [ "Python", 2.78, 8, "V"]
+	print(PyList)
+	print(type(PyList)) # <class 'list'>
+
+
+Nested List:
+
+	A List with in Another List is Called Nested List.
+Eg.
+	PyList = [1,2,3,["Hello","Hi"],4,5,6,[],0,[[1][2]]]
+	print(PyList)
+	print(type(PyList)) # <class 'list'>
+
+
+Basic List Operations:
+
+	We Can Perfor the Following basic operations on list data structure.
+	
+	(1). Concatination		
+	(2). Repetation 	
+	(3). Membership
+	(4). Iteration		
+	(5). Length
+
+Examples:
+
+   # Example For Concatination:
+
+	a = [1,2,3,4]
+	b = [5,6,7,8]
+	c = a + b
+	print(c)  #[1,2,3,4,5,6,7,8]
+
+  # Example For Repetation:
+
+	print(a * 2) # [1,2,3,4,1,2,3,4]
+
+  # Example For Membership:
+
+	print(1 in a) # True
+	print(3 in b) # False
+	print(2 not in b) # True
+
+  # Example For Iteration:
+
+	for x in a:
+		print(x)
+
+	O/p:	1
+		2
+		3
+		4
+
+  # Example For Length:
+	 
+	print(len(a)) # 4
+	print(len(c)) # 8
+
+
+List Indexing :
+	
+	We can use the index operator [] to access an item in a list. Index starts from 0. So, a list having 5 elements will have index from 0 to 4.
+The index must be an integer. Nested list are accessed using nested indexing.
+
+note: we can't use float or other types, this will result into type Error.
+
+  Example:
+
+	PyList = ["Big", "Data", "Tera", "DataScience"]
+	print(PyList[0]) # Big
+	print(PyList[-2]) # Tera	
+	print(PyList[3]) # DataScience
+	
+
+Note:
+	List is UnHashable-(RW)
+	String is Hashable-(Ro)
+
+  Example:
+	
+	PyList = [["Hello"],1,2,3,["PYTHON"]]
+	print(PyList[0])
+	print(PyList[0][0])
+	print(PyList[4][-3])
+	print(PyList[-1][-1][-1])
+
+List Slices:
+
+	List can be Sliced like strings and other sequences. We can access a range of items in a list by using the Slicing Operator (Colon)
+	
+ Syntax:
+	List_name[ Start_Index : End_Index ]
+
+ Example:
+	PyList = [1,2,3,4,5,6,7,8]
+	print(PyList[0:4]) # [1,2,3,4]
+	print(PyList[3:7]) # [4,5,6,7]
+
+
+Slicing with Step :
+
+	a = [1,5,7,3,2,4,6]
+	print(a)
+	SubList = a[2:7:2] # List[start:stop:step]
+	print(SubList) # [7,2,6]
+	SubList = a[6:2:-1] # When step is negative then jump is made backward.
+	print(SubList) # [6,4,2,3]
+
+  Example:
+	
+	a = "malayalam"
+	if a == a[::-1]
+	     print("Yes, This is Palindrome")
+	else:
+	     print("No, This is not Palindrome")
+
+
+
+Python List Method:
+	List Object supports the following list of methods, to perform operations on list objects.
+
+	(1). append()
+	(2). extend()
+	(3). insert()
+	(4). remove()
+	(5). pop()
+	(6). clear()
+	(7). index()
+	(8). count()
+	(9). sort()
+	(10).reverse()
+	(11).copy()
+ 
+
+Python Working with Tuple Data structures:
+``````````````````````````````````````````
+		A read only list is called tuple. (or) A Tuple in Python is a collection that cannot be modified. A Tuple is defined using parenthesis.
+
+				----	( or )	----
+
+	A Tuple is a Container which holds a series of Comma-separated values ( items or Elements ) between parenthesis such as an (x,y) co-ordinate Tuples are like lists, except they are immutable.
+
+Advantages of Tuple over List :
+```````````````````````````````
+
+(1). We generally use tuple for heterogeneous (different) data types and list for homogeneous (Similar) data types.
+(2). Since tuple are immutable, iterating through tuple is faster than with list. So there is a slight performance booster.
+(3). if u have data that doesn't change, implementing it as tuple will garantee that it remains write-protected.
+
+Empty Tuple:
+
+	A tuple without any elements.
+Example:
+	PyTuple=()
+	print(type(PyTuple)) # <class 'tuple'>
+	print(PyTuple)
+
+Numerical Tuple:
+
+	A tuple with integer data is called Numerical Tuple.
+
+Example:
+	PyTuple=(1,2,3,4,5)
+	print(type(PyTuple)) # <class 'tuple'>
+	print(PyTuple)
+
+Float Tuple:
+
+	 A tuple with float data type is called Float Tuple or Numerical tuple with float objects.
+Example:
+	PyTuple=(1.1, 2.78, 4.75, 5.05)
+	print(type(PyTuple)) # <class 'tuple'>
+	print(PyTuple)
+
+
+String Tuple:
+
+	A Tuple with string data is called string Tuple.
+
+Example:
+	PyTuple=("Machine Learning", "Python", "AI", "IOT")
+	print(type(PyTuple)) # <class 'tuple'>
+	print(PyTuple)
+
+Mixed Tuple:
+
+	A Tuple with different data types is called Mixed Tuple.
+
+Example:
+	PyTuple=( 2.78, 4, "Python", "AI", "IOT")
+	print(type(PyTuple)) # <class 'tuple'>
+	print(PyTuple)
+
+Note : Creating Tuple with single object/item is little critical. to avoid these kind of criticalness we place a comma-separator after a single object/item.
+
+Tuple Packing:
+
+	Creating a Tuple without parenthesis is called Tuple Packing & it is treated as tuple.
+a = 3.14, 5, "Python"
+print(type(a)) # <class 'tuple'>
+print(a)
+
+Tuple Unpacking:
+	
+	A Tuple with parenthesis is called tuple unpacking
+x=y=z=a
+print(x,y,z) #  3.14, 5, "Python"
+
+	---> It supports multiple assignment at the same time but if the variables are more, it displays "not enough memory" or else if a value is more, it displays "Value Error"
+
+	----> it supports membership operators.
+
+
+Python Tuple Methods:
+`````````````````````
+
+	Tuple Object supports the following list of methods:
+
+	Count(x)------return the number of items that is equal to x
+	index(x)------returns index of first item that is equal to x.
+
+
+Python Tuple v/s List - Points to Remember:
+````````````````````````````````````````````
+
+--> Lists are mutable while Tuple are immutable.
+--> lists have variable length while tuple has fixed length.
+--> lists has functionality than tuple.
+--> lists object size is Comparatively larger than Tuple.
+--> Execution of Tuple is faster than lists.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

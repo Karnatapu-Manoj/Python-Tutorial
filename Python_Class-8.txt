@@ -1,0 +1,307 @@
+
+
+Python Functions :
+``````````````````
+
+	Functions means code Reusability.
+		(or)
+
+	A Function is set of instructions that is used to perform a single related operation.
+
+		(or)
+
+	A function is a block of organized, reusable code. Functions provide better modularity(high degree of code reusing)
+
+Types Of Functions :
+`````````````````````
+	Basically, we can divide functions into the following two types :
+
+   Built-in Functions.
+
+	functions that are built into Python like==> print(), file(), len(), input(), all(), any(), sorted(),..etc.
+
+   User defined functions (Building our own functions)===> functions defined by the user themselves as per client or business requirements...!
+
+
+Simple Rules to define a Function in Python :
+``````````````````````````````````````````````
+
+(1). Function block begin with the keyword 'def' followed by the function_name and parenthesis () . : 
+(2). Any input parameters (or) arguments should be placed within these parenthesis.
+(3). The first statement of a function can be an optional statement - the documentation string of the function (or) docstring.
+(4). The Code block within every function starts with a colon(:) and is indented.
+(5). A return statement with no arguments is the same as return None.
+
+Syntax:
+
+def Function_Name (arg1,arg2,arg3..!) :
+	"""Doc str"""
+	statement_1
+	statement_2
+	return[expression]
+
+Example:
+
+def My_Cal():
+	x= int(input("Enter any number : "))
+	y= int(input("Enter any number : "))
+	z = x + y
+	print("The result is : ",z)
+	return()
+
+#Drivercode #Calling part
+My_Cal()
+My_Cal()
+
+The Return Statement in function :
+```````````````````````````````````
+	In Python the return statement is used to return a value from a function, return statement without an expression argument returns None.
+
+Example :
+``````````
+
+def MyFunction(a,b):
+	return (a+b)
+
+MyFunction(3,4)
+
+
+Output :
+`````````
+
+	It is blank. no O/P , bcz return (a+b) is able to return the o/p but unable to show/display the output since print() is not there in the block of called part of the function.
+
+in the above example the called part is like this : print(MyFunction(3,4))
+
+
+Example :
+``````````
+
+def MyFunction(a,b):
+	print(a+b)
+	return()	# tuple
+
+print(MyFunction(3,4))
+
+Note: return is by default it is returning "None"
+	print()----> it displays & returns
+	return()---> it is only returning.
+
+
+Various Forms of Functional Arguments :
+```````````````````````````````````````
+
+	You can call a function by using the following types of formal arguments :
+		(1). Required arguments (or) Positional arguments
+		(2). Keyword arguments
+		(3). Default arguments
+		(4). Variable-length arguments.
+
+Positional Arguments :
+```````````````````````
+	Arguments passed should match the function parameter from left to right.
+
+Syntax:
+```````
+def FunName(arg,arg,arg,arg....,n)
+
+example:
+````````
+
+def Pos_Arg(a,b,c):
+	print(a,b,c) 
+	print(b,c)
+	print(c)
+	return()
+Pos_Arg(1,2,3)
+Pos_Arg(10,20,30)
+Pos_Arg("hello","hi","TQ")
+Pos_Arg("hello","hi",100)
+
+Keyword Arguments (Parameters) :
+`````````````````````````````````
+	We can call a function by specifying the keyword arguments in the form argument name = value.
+
+Syntax:
+```````
+FunName(name=value)
+
+Example:
+`````````
+
+def Keyword_Arg(x,y,z):
+	print(x,y,z)
+	print(y,z)
+	print(z)
+	return()
+
+Keyword_Arg(x=1,z=2,y=3)
+Keyword_Arg(z=1,x=20,y=35)
+Keyword_Arg(x="Hello",z="hi",y=100)
+Keyword_Arg(1,z=2,y=3) {Success}
+Keyword_Arg(z=1,2,y=3) {Failure}
+
+
+Note :
+	Positional arguments are having highest priority
+	Keyword arguments are having next priority.
+
+
+
+
+
+
+
+
+Default Arguments(Values):
+```````````````````````````
+
+	We can assign default value for arguments to receive if the call passes too few values.
+Syntax :
+````````
+
+	arguments = value
+
+Example:
+`````````
+
+def Default_Arg(x=10,y=20,z=30):
+	print(x,y,z)
+	print(y,z)
+	print(z)
+	return()
+Default_Arg()
+Default_Arg(1)
+Default_Arg(1,2)
+Default_Arg(1,3,4)
+
+
+Note:
+	Positional Argument follows keyword arguments.
+
+ArbitaryArguments (or) Variable length arguments
+`````````````````````````````````````````````````
+
+	You may need to process a function for more arguments than you specified while defining the function. these arguments are not named in the function defination. They are used when you need to parse more arguments. that you have specified while defining the function. To add an arbitary arguments in the function definition start the variable name with * .
+
+Syntax:
+```````
+
+def Func_Name([formal_args,]*var_args):
+	"""doc-string"""
+	function_suite
+	return[expression]
+
+Example:
+````````
+def Arbitary_Argument(*a):
+	for x in a:
+		print(x)
+	return()
+
+Arbitary_Argument()
+Arbitary_Argument(1,2,3,4,5)
+Arbitary_Argument(1,2,3,4,"Hello","Python","Char")
+
+
+Scope and lifetime of variables:
+`````````````````````````````````
+
+	All variables in a program may not be accessible at all Locations in that program. This depends on where you have declared a variable.
+
+The Scope of a variable determines the portion of the program where you can access a particular identifier. There are two basic scopes of variables in Python.
+
+Local Variables:
+`````````````````
+(1). The variables defined within the function has a local scope and hence they are called local variables.
+(2). Local scope means they can be accessed within the function only. 
+
+def My_Fun_One():
+	
+	x = 20 ; y = 30 # Local variables/local scope.
+	print(x+y)
+	return()
+def My_Fun_Two():
+	print(x+y)
+	return()
+
+My_Fun_One()
+My_Fun_Two()
+
+
+Global Variables:
+``````````````````
+(1). The Variables defined outside the function has a global scope and hence they are called global variables.
+(2). Global Scope means they can be accessed within the function as well as outside the function.
+(3). The value of a global variable can be used by referring the variable as global inside a function.
+
+example:
+````````
+x= 10 ; y = 20
+
+a =1 ; b = 2
+
+def My_Fun_One():
+	print(x+y)
+	return()
+
+def My_Fun_Two():
+	print(a-b)
+	return()
+
+My_Fun_One()
+My_Fun_Two()
+
+example:
+````````
+total = 0
+def sum(arg1,arg2):
+	total = arg1 + arg2
+	print("Inside the function total :",total)
+	return total
+
+sum(10,40)
+print("Outside the function global total : ",total)
+
+	O/p:
+		Inside the function total : 50
+		Outside the function global total : 0
+
+
+
+Advantage in Python :
+`````````````````````
+	In Interpreter level the duplication of variable is possible but in compiler level that is error bcz, no duplication variables.
+
+global keyword:
+```````````````
+	global is used to declare that a variable inside the function is global(outside the function). if we need to read the value of a global variable, it is not necessary to define it as global. if we need to modify the value of a global variable inside a function, then we must declare it with global, Otherwise a loca variable with that name is created.
+
+
+function Aliasing :
+````````````````````
+
+	For the existing function we can give other name, which is nothing but function aliasing.
+
+note: if we delete one name still we can acces that function by using alias name.
+
+example:
+
+def Hello_World(name):
+	print("Good Morning : ", name)
+
+Myworld = Hello_world
+
+Hello_World("Python")
+
+del Hello_world
+
+Myworld('Machine Learning')
+
+
+
+
+
+
+
+

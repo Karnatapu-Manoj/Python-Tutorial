@@ -1,0 +1,561 @@
+		
+
+
+Working With Python OOP's :
+````````````````````````````
+Procedural langage v/s Object oriented Programming
+Procedural Programming:
+```````````````````````
+
+(1). It uses a list of instructions to do computation step-by-step.
+(2). It is not easy to maintain project becomes length.
+(3). It doesn't simulate the real world.
+(4). It doesn't provide data binding.So it is less secure.
+   
+ 	Example:
+		C,Fortron,Pascal,VB etc...
+
+Object Oriented Programming:
+`````````````````````````````
+(1). It is an approach to solve problems using objects.
+(2). It makes development and maintenance easier.
+(3). It simulates the real world entity.
+(4). It provides data hiding.
+
+	Example:
+		C++,Java,.Net,Python,C# etc...
+
+Python Object Oriented Programming System: (OOPS)
+``````````````````````````````````````````````````
+	Python is an object oriented programming language. In Python everything is an object like: classes, objects, functions, methods, modules, etc,,. These can passed as arguments to functions or assign to variables.
+
+OOPS Principles: 
+`````````````````
+
+	OOPS are the rules (or) guidelines which are supposed to be satisfied by any programming language in order to call that programming language as oopl.
+
+Differentoops principles are:
+
+(1). Class
+(2). Object
+(3). Inheritance
+(4). Encapsulation 
+(5). Polymorphism
+(6). Abstraction.
+
+
+What is Class ?
+````````````````
+
+Class can be described as:
+
+- Pre-Defined Keyword
+- class is Template or Blue print for Object
+- collection of variable and Functions
+- collection of Objects that has common properties.
+
+We can Define a Class in python using 'class' keyword.
+
+
+What is Object ?
+`````````````````
+Collection of data and its functionality
+(or)
+It is an entity that has states & behaviours is known as Object.
+(or)
+An Object is an instance of class, which contains attributes & methods.
+
+
+Reference Variable ?
+`````````````````````
+	The Variable which can be used to reffer object is called reference variable. By using reference variable, we can access properties and methods of Object.
+
+state--means Properties  & behaviour---means functionalities.
+
+Example:
+`````````
+class Banking():
+	pass
+
+BB = Banking()
+print(BB)
+
+Example:
+`````````
+class Banking():
+	def MyHome():
+		print("Welcome to Banking")
+		print("Thank u for banking with us")
+
+#Driver code (or) class code
+BB = banking()
+BB.MyHome() (or) Banking().MyHome()
+
+Self Variable:
+```````````````
+	self is the default variable which is always pointing to current object (like 'this' keyword in java) by using self we can access instance variables and instance methods of object.
+(or)
+self argument represents the actual instance of the class,when you create an instance of class, using that instance w can call methods.
+
+note:
+	as per python documentation, self is not mandatory.It is not a keyword, self replace by any argument, but first argument is default & acting as self.
+
+Difference B/w Function and Method in Python:
+``````````````````````````````````````````````
+
+Function:
+``````````
+
+(1). It is always independent, not related to any class.
+(2). Outside the class a piece of code.
+(3). No self parameter required.
+(4). No Instance required to call.
+
+Method:
+````````
+
+(1). It is always related to a class
+(2). Inside the class a piece of code.
+(3). self parameter required.
+(4). Always instance required to call.
+
+		
+Constructor in Python:
+```````````````````````
+(1). It is a special method in python.
+(2). Name of the constructor should be __init__
+(3). It will be executed automatically at the time of object creation.
+(4). The main advantage of constructor is to declare and initialize instance variables.
+(5). For every instance constructor will be executed one-time.
+(6). It can take atleast one argument(self)
+(7). It is optional, if we are not providing any constructor then Python will provide default constructor.
+
+Example:
+
+class Banking():
+	def __init__(self):
+		print("This stmt is frm constructor")
+
+	def Wishing(self):
+		print("Welcome to Banking")
+		print("Thank u for banking with us")
+
+Myobj = Banking()
+Myobj.Wishing()
+
+
+Difference Between Method & Constructor :
+``````````````````````````````````````````
+
+Method:
+
+(1). Method can be any name.
+(2). It will be executed if we call that method.
+(3). For an object, method can be called any number of times.
+(4). Method Contains business logic
+
+
+Constructor:
+
+(1). Name should be always __init__()
+(2). It will be executed automatically at the time of object creation.
+(3). for object,Constructor will be executed one time
+(4). Constructor Inside we have to declare initialize instance variables.
+
+Note:
+	For every object Python internally maintains one default reference variable 'self'.
+
+In Python class we can represent data by using the following variables.
+(1). Instance variable (Object level Variables)
+(2). Static Variable (class level Variables)
+(3). Local variables (Method level Variables)
+
+
+In Python class, we can represent operations by using the following Methods.
+(1). Instance Methods
+(2). class Method
+(3). static Method
+
+
+----> In python class Variables are shared by all instances, & Instance variables are unique to each Instance.
+
+Example:
+`````````
+
+class student():
+	# class level attribute
+	# class level variable
+	CompanyName = "VRH Soft solutions"
+    
+    def __init__(self,name, roll.no,course):
+	
+	# instance Variables
+	self.name = name
+	self.rollno = roll.no
+	self.cors = course
+
+    def Student_details(self):
+	print("Company Name is : ",self.name)
+	print("employee ID is : ",self.rollno)
+	print("Which Developer he is : ",self.cors)
+# Creating Object or Instance
+std1 = student("VRH",123678934,"Python")
+std1.Student_details()
+
+
+What is Garbage Collection ?
+`````````````````````````````
+	Garbage collection(GC) is  a form of automatic memory management.
+(or)
+The Concept of removing the unused, unreferenced object from the memory location is known as a garbage collection.
+
+Example:
+````````
+import gc
+print(dir(gc))
+
+Garbage Collection:
+````````````````````
+	There are two types of garbage collection supported by python they are
+
+
+(1). Automatic Garbage Collection:
+```````````````````````````````````
+	- After starting execution of program periodically garbage collector program runs internally.
+	- whenever any object is going to be removed from memory location the distructor of that class is going to be executed.
+
+(2). Explicit Garbage Collection:
+``````````````````````````````````
+	- The Concept of executing the garbage collection program explicitly whenever we required is known as explicit garbage collection.
+	- by using 'del' keyword we can run garbage collector explicitly.
+
+
+Class Method in Python:
+```````````````````````
+	It returns a class method for the given function. It is a method that is bound to a class rather than its object. It doesn't require creation of a class instance. We can declare class method explicitly by using @classmethod decorator. For class method we should provide class variable at the time of declaration. A Class method receives the class as implicit first arguments.
+
+Syntax:
+    @classmethod
+    def func(cls,args...)
+
+Example:
+class Banking():
+	cust=1000
+	@classmethod
+	def service(cls,name):
+		print('{} has {} customers...!'.format(name,cls.cust))
+# Calling with class name
+Banker.service('SBI')
+Banker.service('ICICI')
+
+When to use class method:
+	Class method to create factory methods. factory methods return class object (Similar to a constructor).
+
+Static Method in Python:
+``````````````````````````
+- simple functions with no 'self' argument
+- nested inside a class
+- these methods are general utility methods
+- Inside these methods we won't use any Instance or class variables.
+- We can declare static method explicitly by using @static method decorator.
+- we can access static methods by using Classname or object reference.
+
+Example:
+````````
+
+class Banking():
+	@staticmethod
+	def Static(Arg):
+		print("Welcome to static Method")
+		print("I can call through obj/class")
+		print("hey:",Arg)
+
+BB = Banking()
+
+BB.Static("Python_Developer")
+
+Banking.Static("Python")	
+
+Class Method V/s Static Method:
+````````````````````````````````
+	A Class method takes cls as first parameter while a static method needs no specific parameters.
+
+A Class method can access or modify class state while a static method can't access or modify it
+
+we use @classmethod decorator in python to create a classmethod.
+
+we use @staticmethod decorator to create a static method.
+
+What is INHERITANCE ?
+``````````````````````
+
+Reuse-class members- Attributes & methods
+(or)
+It is the process of inheriting the class members from one class to another class is called inheritance
+(or)
+The Concept of using properties of one class into another class without creating object of that class explicitly is known as inheritance.
+(or)
+
+ - A class which is extended by another class is known as 'super class'
+ - Both super class property and subclass property can be accessed through subclass using ref.variable
+
+Types of Inheritance:
+``````````````````````
+1. Single level inheritance
+2. Multilevel Inheritance
+3. Multiple Inheritance
+4. Hierarchial Inheritance
+5. Hybrid Inheritance
+
+
+Single Level Inheritance:
+`````````````````````````
+	The concept of inheriting property from only one class into another class is known as single level Inheritance.
+
+Syntax:
+
+	class name(super_class):
+		suite
+
+(or)
+
+	class Base_class:
+		Body of base class
+		............
+		.........
+	class Derived_Class(Base_class):
+		Body of derived class
+		...............
+		.......
+
+Example:
+
+
+class Banking():
+	def Welcome(self):
+		print("Welcome to Banking")
+
+class SBI(Banking):
+	def Hello(self):
+		print("Hello welcome to sbi Banking")
+
+ss = SBI()
+ss.Welcome()
+ss.Hello()
+
+
+Multilevel Inheritance:
+```````````````````````
+	You can Inherit a derived class from another derived class.
+
+Syntax:
+
+class Base_class():
+	Body of base class
+		............
+		.........
+class Derived_Class_1(Base_class):
+		Body of derived class 1
+		...............
+		.......
+
+class Derived_Class_2(Derived_Class_1):
+		Body of derived class 2
+		...............
+		.......
+
+Example:
+
+class Financial_Service_of_India():
+   def FCI_IND(self):
+	print("All Financial matters only")
+	print("Thank Q")
+class RBI(Financial_Service_of_India):
+   def RBI_IND(self):
+	print("All financial matters from FCI")
+class Core_Banking(RBI):
+   def CB_IND(self):
+	print("I must follow RBI rules")
+	print("My rules must followed by all banks")
+class SBI(Core_Banking):
+   def SBI_IND(self):
+	print("I must follow core banking rules")
+	print("All customers shld follow my rules")
+
+ss=SBI()
+ss.FCI_IND()
+ss.RBI_IND()
+ss.CB_IND()
+ss.SBI_IND()
+
+
+Multiple Inheritance:
+``````````````````````
+	You can derive a child class from more than one base(parent) class.
+Syntax:
+
+class derived_class_name(base1,base2,base3):
+	statement-1
+	............
+	..........
+	statement-N
+
+Example:
+
+class Live_water():
+	def life_water(self):
+		print("It can live in water")
+class Live_land():
+	def life_land(self):
+		print("It can live in lan also")
+class Frog(Live_water,Live_land):
+	pass
+
+FF=Frog()
+FF.life_water()
+FF.life_land()
+
+Hierarchical Inheritance:
+`````````````````````````
+	The concept of inheriting properties from one class into multiple classes is known as a hierarchical inheritance.
+
+syntax:
+
+class A:
+	pass
+class B(A):
+	pass
+class C(A):
+	pass
+
+
+class Banker():
+	def Bank_Services(self):
+		print("Welcome to Banking Services")
+class SBI_IND(Banker):
+	def ONLINE_Banking(self):
+		print("Welcome to online banking")
+class ICICI_IND(Banker):
+	def EBanking(self):
+		print("Welcome to Ebanking")
+class HDFC_IND(Banker):
+	def PBanking(self):
+		print("Welcome to phone banking for SR.Citezens")
+class HBSC_IND(Banker):
+	def MBanking(self):
+		print("Welcome to mobile banking")
+
+HB = HBSC_IND()
+HB.Bank_Services()
+HB.MBanking()
+HD = HDFC_IND()
+HD.Bank_Services()
+HD.PBanking()
+IC = ICICI_IND()
+IC.Bank_Services()
+IC.EBanking()
+SB = SBI_IND()
+SB.Bank_Services()
+SB.ONLINE_Banking()
+
+
+Hybrid Inheritance:
+````````````````````
+	Hybrid Inheritance is that type in which we combine two or more types of Inheritances.
+(or)
+It is the combination of Hirarchical + Multiple + Multilevel Inheritance are called Hybrid Inheritance.
+
+Syntax:
+
+class A():
+	pass
+class B(A):
+	pass
+class C(A):
+	pass
+class D(C,B,A):
+	pass
+def main():
+	obj1 = D()
+if __name__ == " __main__ " :
+	main()
+
+Example:
+`````````
+
+class A():
+    def My_Method(self):
+        print("I am from class a")
+class B(A):
+    def My_Method(self):
+        print("I am from class b")
+class C(A):
+    def My_Method(self):
+        print("I am from class c")
+class D(C,B,A):
+    def My_Method(self):
+        print("I Am in class D")
+        C.My_Method(self)
+        B.My_Method(self)
+        A.My_Method(self)
+
+def main():
+    obj1 = D()
+    obj1.My_Method()
+    
+if __name__ == "__main__":
+    main()
+
+what is {if __name__=="__main__":}
+`````````````````````````````````````
+
+__name__(A Special Variable) in Python
+
+__name__ is one such special variable. If the source file is executed as the main program, the interpreter sets the __name__ variable to have a value "__main__". If this file is being imported from another module,__name__ will be set to that module's name
+
+
+>>> __name__
+'__main__'
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

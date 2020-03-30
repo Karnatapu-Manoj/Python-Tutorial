@@ -1,0 +1,348 @@
+		
+
+
+Python Exception Handling:
+``````````````````````````
+
+Python Errors:
+==============
+	In Python there are three types of errors.
+
+(1).Syntax Errors.
+(2).Logical Errors or Semantic errors
+(3).Runtime Errors.
+
+
+(1). Syntax Errors:
+```````````````````
+	These are the most basic type of errors. Syntax errors are almost always Fatal. In IDLE, it will highlight where the syntax error is Most syntax errors are typos, incorrect indentation/incorrect arguments.
+
+Example:
+
+print(hello,world)
+print("Hello') ; print('hello")
+class="IIT"
+name="VRH info Solutions.
+
+Ways to avoid the most common syntax Errors:
+
+(1). Never use a Python keyword for a variable name.
+(2). Any strings in the code should have matching quotation marks.
+(3). Always check unclosed opening operators - ( , { , [
+(4). Always check the indentation
+(5). Don't give your module the same name as one of the standard Python modules.
+
+
+(2). Logical Errors :
+`````````````````````
+	Your program might run without crashing(no syntax or run-time errors), but still do the wrong thing.
+example:
+
+x = 3 ; y = 4
+avg = x+y/2
+print(avg)
+
+but the program prints 5.0 instead of average...!
+
+
+
+to make clear avg=(x+y)/2, which makes clear. Logical errors can be difficult to spot, especially in a longer program but as you get better at writing code you will also get better at avoiding logic errors.
+
+(3). Run-Time Errors:
+``````````````````````
+	Python is able to understand what the program says, but runs into problems when actually performing the instructions. like spelling mistakes or invalid Methods & properties etc..!
+
+Example:
+
+CallMe = "Manoj"
+print(callme)
+
+Common RunTime Errors in Python:
+`````````````````````````````````
+
+In Python the Following are common RunTime Errors:
+(1).NameError
+(2).TypeError
+(3).KeyError
+(4).AttributeError
+(5).IndexError
+(6).ZeroDivisionError
+
+Types of Exceptions:
+`````````````````````
+	In Python there are 2 types of exceptions are possible.
+1.Predefined Exception.
+2.User Defined Exception.
+
+Predefined Exceptions:
+```````````````````````
+	Also known as in-built exceptions Python Exception Handlings.
+
+Python provides two important features to handle any unexcepted error in your Python Programs:
+
+(1).Exception Handling
+(2).Assertions.
+
+What is an Exception ?
+````````````````````````
+	An exception is an error that happens during execution of a program. When that error occurs, Python generate an exception that can be handled, which avoids your program to crash.
+
+Common Exception Errors :
+`````````````````````````
+
+(1). except IO Error:
+	print("An error occurred trying to read the file.")
+(2). except ValueError:
+	print("Non numeric data found in the file.")
+(3). except Import Error :
+	print("No module found")
+(4). except EOFError:
+	print("End of line no data.")
+(5). except KeyboardInterrupt:
+	print("You cancelled the operation")
+(6). except:
+	print("An Error Occured")
+
+Why Exceptions?
+````````````````
+	Exceptions are convenient in many ways for handling errors and special conditions in a program.
+
+Syntax- I :
+````````````
+
+try:
+     Some statements...
+     ...............
+except:
+	Exception Handeling.
+
+Example:
+`````````
+try:
+	x = int(input("Enter a value: "))
+	print("Try Block: Enter Number is : ",x)
+except ValueError:
+	print("Except Block : Invalid input enter only numbers")
+
+example:
+````````
+try:
+	x = int(input("Enter a value: "))
+	y = int(input("Enter a value: "))
+	z = x/y
+	print("The Result is : ",z)
+except ValueError:
+	print("Invalid user Input")
+except ZeroDivisionError:
+	print("y must be Non-Zero Number")
+
+
+for somany errors instead of writing all errors we can write simple one "except:" command as shown below
+
+try:
+	x = int(input("Enter a value: "))
+	y = int(input("Enter a value: "))
+	z = x/y
+	print("The Result is : ",z)
+except ValueError:
+	print("Invalid user Input")
+except Exception as arg:
+	print("Error:",arg)
+
+
+
+Syntax - II :
+`````````````
+
+try:
+	you do your operation
+	here.....
+	...........
+except Exception-I:
+	if there is Exception-I, then execute this block
+	...............
+	..............
+	else:
+	if there is no exception 
+	then these.......
+	....................
+
+Example:
+
+
+try:
+	x = int(input("Enter a value: "))
+	y = int(input("Enter a value: "))
+	z = x/y
+	print("The Result is : ",z)
+
+except Exception as arg:
+	print("Error:",arg)
+else:
+	print("The code is success")
+	print("Thank You")
+
+example:
+
+try:
+	x = int(input("Enter a value: "))
+	y = int(input("Enter a value: "))
+	z = x/y
+	print("The Result is : ",z)
+	d = x//y
+	print("the result of flr_div is : ",d)
+	e = x%y
+	print("The result of div is : ",e)
+except Exception :
+	print("error obtained is :",Exception)
+else:
+	a = x+y
+	b = x-y
+	c = x*y
+	print("The Result of + is : ",a)
+	print("The Result of - is : ",b)
+	print("The Result of * is : ",c)
+
+the try-finally clause:
+````````````````````````
+	You can use a finally: block along with a try: block, the finally block is a place to put any code that must execute,whether the try-block raised an exception or not.
+
+try:
+   statements...
+   .............
+   ..............
+except:
+    exceptional statements..
+    ................
+    ...................
+finally:
+	these stmts are always executable
+	...................
+	.............
+
+note:
+	You can't use else clause,along with a finally clause.
+
+Example:
+
+
+try:
+	x = int(input("Enter a value: "))
+	y = int(input("Enter a value: "))
+	z = x/y
+	print("The Result is : ",z)
+except ValueError:
+	print("Invalid user Input")
+except ZeroDivisionError:
+	print("y must be Non-Zero Number")
+
+finally:
+	print("The Finally Block is Always executed")
+	print("The code is completed...")
+
+Nested try-except-finally blocks:
+``````````````````````````````````
+
+	We can take try-except-finally blocks inside try or except or finally blocks. i.e., nested of try-except-finally is possible.
+
+Syntax:
+ 
+try:
+    ..............
+    ..............
+    ..........
+	try:
+	   ..............
+	   .............
+	except:
+	   ............
+	   ..........
+	finally:
+	   ...........
+ 	   ...........
+except:
+   ............
+   ............
+
+finally:
+    ..........
+    .............
+
+Assertions in Python(Automatic Error Dection)
+```````````````````````````````````````````````
+	Assert is the Python keyword. Python's assert statement helps you find bugs more quickly and with less pain. When it encounters an assert statement, Python evaluates the accompanying expression, which is hopefully true. if the expression is false, Python raises an AssertionError exception.
+
+Syntax:
+
+    assert expression,argument
+Parameters:
+``````````
+	expression:
+	   Required.Expression to evaluate.
+	argument:
+	   Optional. Argument passed to the exception raise.
+
+
+Asserts V/s Try...Except:
+
+Software Errors are Two categories:
+(1). Recoverable Errors(try..Except)
+	
+	==> User can take corrective action(Try Again or choose Another Option)
+
+(2). Un-Recoverable Errors(assert)
+
+	==> Not Enough information to fix or no alternative action is possible
+
+Use Assertions to write the following strategies:
+``````````````````````````````````````````````````
+(1). Pre-Conditions and Past-Conditions.
+(2). The Most powerful debugging tool
+(3). Automating Debugging
+(4). It is powerful to catch all bugs (or) defects
+
+Example:
+`````````
+def MyVote_Age(age):
+	assert age>=18,"Sorry Unable To Vote"
+	print("Welcome to Vote")
+	print("Thank U for Voting")
+	return()
+
+MyVote_Age(19)
+MyVote_Age(26)
+MyVote_Age(16) # Assert Error: Sorry Unable To Vote.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
